@@ -1,0 +1,59 @@
+body{
+    background-image: url("./static/images/coal-mine.jpg"); ;
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+    background-attachment: fixed;
+    color: white;
+    
+}
+
+main{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.footer{
+    color: white;
+    font-family: cursive, 'Brush Script MT';
+    background-color: rgba(0,0,0,0.8);
+    
+}
+
+b{
+    color: black;
+}
+
+p{
+    color: black;
+    text-align: justify;
+}
+
+h1, h2, h3, h4, h5{
+    color: black;
+    font-size: 30px;
+}
+
+.why_us {
+    color: blue;
+    text-align: justify;
+
+}
+td, th{
+    color: white;
+}
+
+hr{
+    color: black;
+}
+
+#home-text{
+    font-size: 20px;
+}
+
+@media print {
+    * {
+      display: none;
+    }
+    #printableTable {
+      display: block;
+    }
+  }

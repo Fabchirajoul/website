@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Cargo Logistics</title>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="code.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css" rel="stylesheet" />
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
+        integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="css/style.css" rel="stylesheet" />
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body class="container">
+    <main class="card" x-data="CAPSTONEWIDGET" x-cloak>
+        <!-- <section> -->
+
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-black">
+
+            <div class="container">
+                <a class="navbar-brand mt-2 mt-lg-0" href="/"> GLOBAL CARGO LOGISTICS
+                </a>
+                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                    data-mdb-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02" x-cloak>
+
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                        <li class="nav-item">
+                            <a class="link-secondary me-3" x-on:click="openHome('homepage')" href="#">HOME</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="link-secondary me-3" x-on:click="openHome('about')" href="#">ABOUT</a>
+                        </li>
+                        
+
+                        <li class="nav-item">
+                            <a class="link-secondary me-3" x-on:click="openHome('why_us')" href="#">WHY US</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="link-secondary me-3" x-on:click="openHome('contact_us')" href="#">CONTACT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="link-secondary me-3" x-on:click="openHome('faq')" href="#">FAQ</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="link-secondary me-3" x-on:click="openHome('our_services')" href="#">OUR
+                                SERVICES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="link-secondary me-3" x-on:click="openHome('tracking')" href="#">TRACKING</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+
+        </nav>
+        <br><br><br>
+        <!-- home page  -->
+        <section>
+            <div class="row">
+                <div class="col-md-12" x-show="homapage">
+
+                    <div col-md-12>
+                        <template x-for="image in images">
+                            <img x-show="activeImage===image" :src="image" alt="" class="link-secondary me-12" />
+                        </template>
+
+                        <div>
+                            <span style="float: left;">
+                                <a href="" @click.prevent="prev" class="badge rounded-pill badge-info">PREVIOUS
+
+                                </a></span>
+                            <span style="float: right;">
+                                <a href="" @click.prevent="next" class="badge rounded-pill badge-info">NEXT</a></span>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+
+        </section>
+        <!-- home page 2  -->
+        <section>
+            <div class="row" x-show="homepage2">
+                <div class="col-md-7">
+                    <h3>WELCOME TO GLOBAL CARGO LOGISTICS</h3>
+                    <p>
+                        <b>GLOBAL CARGO LOGISTICS</b> is engaged in the provision of shipping services, freight
+                        forwarding,
+                        logistics and other related freight transport activities. Improving our overall performance
+                        throughout our operations is central to our continuing priority to ensure our customers
+                        receive both products and services of the highest standards possible.<br><br>
+
+                        We believe in delivering logistical services on time. That is why customers in over 30
+                        countries around the world rely on our expertise to manage their day to day logistic needs.
+                        Whether you are importing goods to the USA, or exporting products to the rest of the world.
+                        GLOBAL CARGO LOGISTICS is your partner in global logistics.<br><br>
+
+                        From international and domestic shipping to expedite shipping and warehousing & crating, we
+                        provide an efficient, full-service solution that allows our clients to simplify the shipping
+                        process and cost. Coupled with our Vast fleet of modern vessels, our strong partnerships
+                        with other global transporters gives us an edge as a true global logistics provider .
+
+                    </p>
+                </div>
+
+                <div class="col-md-5">
+                    <h3>OUR SERVICES</h3>
+                    <p style="text-align:justify" ></p>
+                    <a href="#" x-on:click="openHome('our_services')" x-text="imageStart[currentIndex].title"></a>
+                    <p x-on:click="openHome('our_services')" x-text="imageStart[currentIndex].text"><p>
+                    <br>
+                    <!-- <template x-for="image in images"> -->
+                    <img :src="imageStart[currentIndex].image" alt="Current Image" width="100%">
+                    <!-- </template> -->
+                </div>
+            </div>
+
+        </section>
+
+         <!-- about us  -->
+         <section>
+            <div class="row" x-show="about">
+                <div class="col-md-5">
+                    <h5>ABOUT US</h5><hr>
+                    <a class="link-secondary me-3" x-on:click="openHome('homepage')" href="#">HOME</a><br><hr>
+                    <a class="link-secondary me-3" x-on:click="openHome('why_us')" href="#">WHY US</a><br><hr>
+                    <a class="link-secondary me-3" x-on:click="openHome('shareholders')" href="#">BRANCH MANAGERS</a><br><hr>
+                    
+                    <img :src="imageShareholder[currentIndex].image" alt="Current Image" width="100%" class="link-secondary me-5"><br>
+                            <p>Name:</span><span x-text="imageShareholder[currentIndex].name" class="link-secondary me-3"></p> 
+                            <p>Position:</span><span x-text="imageShareholder[currentIndex].position" class="link-secondary me-5"></p>
+                            <p>Country:</span><span x-text="imageShareholder[currentIndex].country" class="link-secondary me-5"></p>
+                            <p>Biography:</span><span x-text="imageShareholder[currentIndex].biograpghy" class="link-secondary me-5"></p>
+                   
+                </div> 
+                    <div class="col-md-7">
+                        <p>GLOBAL CARGO LOGISTICS has rapidly established a reputation across range of industry
+                            sectors for providing its customized shipping solution. We offer personalized services with
+                            perfect acombinations of prices along with fastest transit time to accommodate customer
+                            objectives. In the highly competitive era of international shipping and logistics, GLOBAL CARGO
+                            LOGISTICS is a widely respected brand charecterized by an unique business approach and our total
+                            commitment towards quality.
+                            All our staff members are dedicated to those core values that form the foundation of business:
+                        </p>
+                        <p>All our staff members are dedicated to those core values that form the foundation of business:
+                        </p>
+                        <br>
+    
+                        <p><img src="images/about.JPG">Timely and accurate flow of critical information.</p>
+                        <p><img src="images/about.JPG">Top quality personalized customer services</p>
+                        <p><img src="images/about.JPG">High standard of professional performances</p>
+                        <p><img src="images/about.JPG">Continuous improvements of systems, process and people</p>
+
+                        <h4>MISSION STATEMENT</h4><br>
+
+                        <p><b>GLobal Cargo Logistics</b>> is dedicated to building long-term relationships with our customers and associates and a commitment through our various services to providing consistent, reliable and cost-effective solutions for meeting customer needs and service satisfaction.</p>
+                    
+                        <h4>VISION STATEMENT</h4><br>
+
+                       <p><b>Global Cargo Logistics</b> is dedicated to building long-term relationships with our customers and associates and a commitment through our various services to providing consistent, reliable and cost-effective solutions for meeting customer needs and service satisfaction.</p>>
+                    </div>
+
+                    
+            </div>
+        </section>
+
+    
+        <!-- why us section-->
+        <section x-cloak>
+            <div class="row">
+                <div class="row" x-show="why_us">
+
+                    <div class="col-md-3">
+                        <h5>WHY US</h5><hr>
+                        <a class="link-secondary me-3" x-on:click="openHome('about')" href="#">ABOUT US</a><br><hr>
+                        <a class="link-secondary me-3" x-on:click="openHome('our_awards')" href="#">OUR AWARDS</a><br><hr>
+                        <a class="link-secondary me-3" x-on:click="openHome('our_customers')" href="#">OUR CUSTOMERS</a><br><hr> 
+                        <a class="link-secondary me-3" x-on:click="openHome('our_evolution')" href="#">OUR EVOLUTION</a><br><hr>
+                        <a class="link-secondary me-3" x-on:click="openHome('why_we_are_different')" href="#">WHY WE ARE DIFERENT</a><br><hr> 
+
+                        <img :src="imageWhyUs[currentIndex].image" alt="Current Image" width="100%" class="link-secondary me-5"><br>
+                            <span class="why_us" x-text="imageWhyUs[currentIndex].text1" class="link-secondary me-3"></span><br>
+                            <span x-text="imageWhyUs[currentIndex].text2" class="link-secondary me-3"></span><br><hr>
+
+                            
+                    </div> 
+                        <div class="col-md-9">
+                            <h5>WHY GLOBAL CARGO LOGISTICS</h5><hr>
+                            <p class="why_us">Our people and franchise partners are our greatest point of difference; in fact they're the foundation of our business.
+                            </p>
+                            <p>As owner-operators, our franchise partners are dedicated to providing each and every customer with exceptional service; going the extra mile to ensure that your parcels are delivered on time and with the utmost care.</p>
+                            <hr><br>
+                            <p class="why_us">Each Global Cargo Courier Franchisee is required to:
+                            </p>
+                            <p>Be security checked</p>
+                            <p>Wear full corporate uniform</p>
+                            <p>Display security photograph identification</p>
+                            <p>Drive a clean, fully sign written vehicle</p>
+                            <p>Be fully insured</p>
+                            <p>Carry a mobile phone and GPRS hand-held scanner</p>
+                            <p>Be fully trained in parcel handling procedures</p>
+                            <hr><br>
+
+                            <p class="why_us">At Global Cargo Couriers, we understand that a courier service isn't just about product delivery
+                            </p>
+                            <p>It's about working with a freight provider who is essentially an extension of your own business. A partner who can help you achieve bottom line savings, whose courier delivery methods enhance your customer experience, and whose capability will equip you with a point of difference in an ever-tightening market.</p>
+                            <hr><br>
+                            <p class="why_us">The Global Cargo Couriers difference
+                            </p>
+                            <img src="images/why_us/whyfwthtop_cfvan.jpg"/>
+                            <hr><br>
+                            <p class="why_us">Courier Franchisees
+                            </p>
+                            <p>Our franchisees are business owners with local knowledge of delivery and pick-up points.</p>
+                            <hr><br>
+                        </div>    
+                </div>
+            </section>
+            <!-- our awards  -->
+            <section>
+                <div class="row">
+                    <div class="row" x-show="our_awards">
+    
+                        <div class="col-md-3">
+                            <h5>WHY US</h5><hr>
+                            <a class="link-secondary me-3" x-on:click="openHome('about')" href="#">ABOUT US</a><br><hr>
+                            <a class="link-secondary me-3" x-on:click="openHome('our_awards')" href="#">OUR AWARDS</a><br><hr>
+                            <a class="link-secondary me-3" x-on:click="openHome('our_customers')" href="#">OUR CUSTOMERS</a><br><hr> 
+                            <a class="link-secondary me-3" x-on:click="openHome('our_evolution')" href="#">OUR EVOLUTION</a><br><hr>
+                            <a class="link-secondary me-3" x-on:click="openHome('why_we_are_different')" href="#">WHY WE ARE DIFERENT</a><br><hr> 
+    
+                            <img :src="imageWhyUs[currentIndex].image" alt="Current Image" width="100%" class="link-secondary me-5"><br>
+                                <span class="why_us" x-text="imageWhyUs[currentIndex].text1" class="link-secondary me-3"></span><br>
+                                <span x-text="imageWhyUs[currentIndex].text2" class="link-secondary me-3"></span><br><hr>
+    
+                                
+                        </div> 
+                            <div class="col-md-9">
+                                <h5>OUR AWARDS</h5><hr>
+                               
+                                <p class="why_us">At GLobal Cargo Logistics, we believe the ultimate pat on the back is being recognised by our customers and the industry that we’re so proud to belong to – franchising. </p>
+                                <p>We’re always excited to be nominated for awards that recognise the achievements of our talented Fastway team. From our impressive list of awards, here’s a small local sample.</p> <hr><br>
+                                <p class="why_us">Fastway awards and achievements</p>
+                                <p>2011<span></span><span>Franchise Association of South Africa Awards</span></p>
+                                <p><span></span><span>Newcomer Franchisor of the Year Finalist</span></p>
+                                <p><span></span><span>Franchisor of the Year Finalist</span></p>
+
+                            </div>    
+                    </div>
+
+            </section>
+
+             <!-- our customers  -->
+             <section>
+                <div class="row">
+                    <div class="row" x-show="our_customers">
+    
+                        <div class="col-md-3">
+                            <h5>WHY US</h5><hr>
+                            <a class="link-secondary me-3" x-on:click="openHome('about')" href="#">ABOUT US</a><br><hr>
+                            <a class="link-secondary me-3" x-on:click="openHome('our_awards')" href="#">OUR AWARDS</a><br><hr>
+                            <a class="link-secondary me-3" x-on:click="openHome('our_customers')" href="#">OUR CUSTOMERS</a><br><hr> 
+                            <a class="link-secondary me-3" x-on:click="openHome('our_evolution')" href="#">OUR EVOLUTION</a><br><hr>
+                            <a class="link-secondary me-3" x-on:click="openHome('why_we_are_different')" href="#">WHY WE ARE DIFERENT</a><br><hr> 
+    
+                            <img :src="imageWhyUs[currentIndex].image" alt="Current Image" width="100%" class="link-secondary me-5"><br>
+                                <span class="why_us" x-text="imageWhyUs[currentIndex].text1" class="link-secondary me-3"></span><br>
+                                <span x-text="imageWhyUs[currentIndex].text2" class="link-secondary me-3"></span><br><hr>
+    
+                                
+                        </div> 
+                            <div class="col-md-9">
+                                <h5>OUR CUSTOMERS</h5><hr>
+                                
+                                
+                                <hr>
+                            </div>    
+                    </div>
+
+             </section>
+
+             <!-- our evolution  -->
+             <section>
+                <div class="row">
+                    <div class="row" x-show="our_evolution">
+    
+                        <div class="col-md-3">
+                            <h5>WHY US</h5><hr>
+                            <a class="link-secondary me-3" x-on:click="openHome('about')" href="#">ABOUT US</a><br><hr>
+                            <a class="link-secondary me-3" x-on:click="openHome('our_awards')" href="#">OUR AWARDS</a><br><hr>
+                            <a class="link-secondary me-3" x-on:click="openHome('our_customers')" href="#">OUR CUSTOMERS</a><br><hr> 
+                            <a class="link-secondary me-3" x-on:click="openHome('our_evolution')" href="#">OUR EVOLUTION</a><br><hr>
+                            <a class="link-secondary me-3" x-on:click="openHome('why_we_are_different')" href="#">WHY WE ARE DIFERENT</a><br><hr> 
+    
+                            <img :src="imageWhyUs[currentIndex].image" alt="Current Image" width="100%" class="link-secondary me-5"><br>
+                                <span class="why_us" x-text="imageWhyUs[currentIndex].text1" class="link-secondary me-3"></span><br>
+                                <span x-text="imageWhyUs[currentIndex].text2" class="link-secondary me-3"></span><br><hr>
+    
+                                
+                        </div> 
+                            <div class="col-md-9">
+                                <h5>OUR EVOLUTION</h5><hr>
+                                
+                                <hr>
+                            </div>    
+                    </div>
+
+             </section>
+
+              <!-- WHY WE ARE DIFERENT  -->
+              <section>
+                <div class="row">
+                    <div class="row" x-show="why_we_are_different">
+    
+                        <div class="col-md-3">
+                            <h5>WHY US</h5><hr>
+                            <a class="link-secondary me-3" x-on:click="openHome('about')" href="#">ABOUT US</a><br><hr>
+                            <a class="link-secondary me-3" x-on:click="openHome('our_awards')" href="#">OUR AWARDS</a><br><hr>
+                            <a class="link-secondary me-3" x-on:click="openHome('our_customers')" href="#">OUR CUSTOMERS</a><br><hr> 
+                            <a class="link-secondary me-3" x-on:click="openHome('our_evolution')" href="#">OUR EVOLUTION</a><br><hr>
+                            <a class="link-secondary me-3" x-on:click="openHome('why_we_are_different')" href="#">WHY WE ARE DIFERENT</a><br><hr> 
+    
+                            <img :src="imageWhyUs[currentIndex].image" alt="Current Image" width="100%" class="link-secondary me-5"><br>
+                                <span class="why_us" x-text="imageWhyUs[currentIndex].text1" class="link-secondary me-3"></span><br>
+                                <span x-text="imageWhyUs[currentIndex].text2" class="link-secondary me-3"></span><br><hr>
+    
+                                
+                        </div> 
+                            <div class="col-md-9">
+                                <h5>WHY WE ARE DIFFERENT</h5><hr>
+                                
+                                <hr>
+                            </div>    
+                    </div>
+
+              </section>
+
+        <!-- Contact us section -->
+        <section>
+            <div class="row" x-show="contact_us" x-cloak>
+                <!-- Fabchi -->
+                <div class="col l3 m6 s6">
+                    <img src="images/RJ.jpeg" width="75%">
+                    <b>
+                        <p>Surname: &nbsp;<span>Fabchi</span></p>
+                        <p>Initials: &nbsp;<span>RJ</span></p>
+                        <p>Email: &nbsp;<span>fabchirajoul@gmail.com</span></p>
+                        <p>Phone Number: &nbsp;<span>+2763382663</span></p>
+                        <p>Nationality: &nbsp;<span>Cameroon</span></p>
+                        <p>Discipline: &nbsp;<span>MINING ENGINEER | Machine learning Expert</span></p>
+                    </b>
+                </div>
+                <div class="col l3 m6 s6">
+                    <img src="images/KLR.jpeg" width="100%">
+                    <b>
+                        <p>Surname: &nbsp;<span>LUKWAGO</span></p>
+                        <p>Initials: &nbsp;<span>RK</span></p>
+                        <p>Email: &nbsp;<span>lukwagorsaved@gmail.com</span></p>
+                        <p>Phone Number: &nbsp;<span>+27738976343</span></p>
+                        <p>Nationality: &nbsp;<span>Uganda</span></p>
+                        <p>Discipline: &nbsp;<span>INFORMATION TECH AND SYSTEMS | Machine learning Expert</span></p>
+                    </b>
+                </div>
+                <div class="col l3 m6 s6">
+                    <img src="images/MTE.jpeg" width="75%">
+                    <b>
+                        <p>Surname: &nbsp;<span>MOJEWA</span></p>
+                        <p>Initials: &nbsp;<span>T</span></p>
+                        <p>Email: &nbsp;<span>tswelopelemojewa@gmail.com</span></p>
+                        <p>Phone Number: &nbsp;<span>+27790985214</span></p>
+                        <p>Nationality: &nbsp;<span>South Africa</span></p>
+                        <p>Discipline: &nbsp;<span>ELECTRICAL ENGINEER | Machine learning Expert</span></p>
+                    </b>
+                </div>
+                <div class="col l3 m6 s6">
+                    <img src="images/OBY.jpeg" width="75%">
+                    <b>
+                        <p>Surname: &nbsp;<span>NWOSU</span></p>
+                        <p>Initials: &nbsp;<span>OCV</span></p>
+                        <p>Email: &nbsp;<span>kingemjay3355@gmail.com</span></p>
+                        <p>Phone Number: &nbsp;<span>+27683443129</span></p>
+                        <p>Nationality: &nbsp;<span>Nigeria</span></p>
+                        <p>Discipline: &nbsp;<span>GEOPHYSICS | Machine learning Expert</span></p>
+                    </b>
+                </div>
+            </div>
+        </section>
+        
+       
+
+        <section>
+            <div class="col l12 m12 s12" x-show="tracking">
+                <p>tracking</p>
+                <div class="col l3 m6 s6">
+                    <img src="images/RJ.jpeg" width="75%">
+                    <b>
+                        <p>Surname: &nbsp;<span>Fabchi</span></p>
+                        <p>Initials: &nbsp;<span>RJ</span></p>
+                        <p>Email: &nbsp;<span>fabchirajoul@gmail.com</span></p>
+                        <p>Phone Number: &nbsp;<span>+2763382663</span></p>
+                        <p>Nationality: &nbsp;<span>Cameroon</span></p>
+                        <p>Discipline: &nbsp;<span>MINING ENGINEER | Machine learning Expert</span></p>
+                    </b>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section>
+            <div class="col l12 m12 s12" x-show="faq">
+                <p>homepage</p>
+                <div class="col l3 m6 s6">
+
+                    <b>
+                        <p>Surname: &nbsp;<span>Fabchi</span></p>
+                        <p>Initials: &nbsp;<span>RJ</span></p>
+                        <p>Email: &nbsp;<span>fabchirajoul@gmail.com</span></p>
+                        <p>Phone Number: &nbsp;<span>+2763382663</span></p>
+                        <p>Nationality: &nbsp;<span>Cameroon</span></p>
+                        <p>Discipline: &nbsp;<span>MINING ENGINEER | Machine learning Expert</span></p>
+                    </b>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <div class="col l12 m12 s12" x-show="our_services">
+                <p>homepage</p>
+                <div class="col l3 m6 s6">
+                    <img src="images/RJ.jpeg" width="75%">
+                    <b>
+                        <p>Surname: &nbsp;<span>Fabchi</span></p>
+                        <p>Initials: &nbsp;<span>RJ</span></p>
+                        <p>Email: &nbsp;<span>fabchirajoul@gmail.com</span></p>
+                        <p>Phone Number: &nbsp;<span>+2763382663</span></p>
+                        <p>Nationality: &nbsp;<span>Cameroon</span></p>
+                        <p>Discipline: &nbsp;<span>MINING ENGINEER | Machine learning Expert</span></p>
+                    </b>
+                </div>
+            </div>
+
+        </section>
+
+
+    </main>
+    <div class="card">
+        <section>
+            <footer class="page-footer">
+                <div class="footer-copyright">
+                    <div class="row">
+                        <div class="col m8 l12 s12" style="text-align: center;">
+                            © 2023 Copyright Reserved<br>
+
+                            <a class="grey-text text-lighten-4 right" href="#!">UJ & ACCENTURE WORK READINESS
+                                PROGRAM</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </section>
+    </div>
+
+</html>
