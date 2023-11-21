@@ -16,6 +16,12 @@ document.addEventListener("alpine:init", () => {
       our_evolution: false,
       why_we_are_different: false,
 
+      faq_category1: false,
+      faq_category2: false,
+      faq_category3: false,
+      faq_category4: false,
+      faq_category5: false,
+
       openHome(currentSection) {
         this.why_us = false;
         this.homapage = true;

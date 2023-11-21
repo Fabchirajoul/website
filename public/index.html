@@ -86,7 +86,6 @@
         <section>
             <div class="row">
                 <div class="col-md-12" x-show="homapage">
-
                     <div col-md-12>
                         <template x-for="image in images">
                             <img x-show="activeImage===image" :src="image" alt="" class="link-secondary me-12" />
@@ -101,7 +100,6 @@
                                 <a href="" @click.prevent="next" class="badge rounded-pill badge-info">NEXT</a></span>
                         </div>
                     </div>
-                    <br>
                 </div>
             </div>
 
@@ -527,7 +525,7 @@
 
                     <template x-for="(image, currentIndexdiferent1) in imagesDifferent1" :key="currentIndexdiferent1">
                      <p><img :src="image" alt="Current Image" width="100%"
-                        class="image-container img"></p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                        class="image-container img"></p>
                     </template>
                  </div>
                 <br>
@@ -615,23 +613,67 @@
 
         </section>
 
-
+        <!-- faq  -->
         <section>
-            <div class="col l12 m12 s12" x-show="faq">
-                <p>homepage</p>
-                <div class="col l3 m6 s6">
+            <div class="row" x-show="faq">
+                <div class="col-md-12">
+                    <h5>FAQS</h5><hr>
+                    <p class="why_us">View answers to the most commonly asked questions
+                    </p>
+                   <p>Categories</p>
+                   <a href="#" @click.prevent="faq_category1=!faq_category1">Receiving parcels</a><br>
+                   <div x-show="faq_category1">
+                    <p><span class="why_us">Can I arrange a redelivery for a specific time ? </span><span> Unfortunately, due to the nature of the courier business, we can't schedule a redelivery for a specific day or time.</span></p>
+                    <p> <span class="why_us">Can I pick my parcel up from the depot? </span> Yes, please contact us first to make sure it's ready at the depot for you!</p>
+                    <p><span class="why_us">How do I arrange a redelivery ? </span><span>We know it's a pain missing your delivery, so we've got a number of easy options to get your parcel to you as quickly as possible:
+                        <br>1. Redeliver to the original address <br>We'll happily re-deliver your parcel to the original address free of charge.  You can do this by logging an online enquiry. Please note, we only offer one attempt at a re-delivery for free.
+                    <br>2.Redirect to a new address <br>You can arrange to have your parcel delivered to a new address for a small fee.  You can do this by logging an online enquiry.
+                    <br>3. Depot pick up <br>You're able to pick up your parcel directly from the depot, just make sure to contact us before you arrive to make sure your parcel is there.</span></p>
+                    <p> <span class="why_us">How do I track my parcel? </span><span>Your parcel is scanned at each stage of its journey to you. Sometimes scanning events might be delayed due to connectivity issues. <br>You're able to <a x-on:click="openHome('tracking')" href="">track your parcel</a> on our website using your label number.</span></p>
+                    <p><span class="why_us"> In which locations do you operate? </span><span></span></p>
+                    <p><span class="why_us"> What if I'm unable to sign for the delivery? </span><span></span></p>
+                    <p><span class="why_us"> What if my parcel arrives damaged?  </span><span></span></p>
+                    <p> <span class="why_us"> What should I do if my parcel hasn't arrived?</span><span></span></p>
+                   </div>
+                   <a href="#" @click.prevent="faq_category2=!faq_category2">Sending parcels</a><br>
+                   <div x-show="faq_category2">
+                    <p> <span class="why_us"> Are there any addresses that Globl Cargo Logistics can’t deliver to?</span><span></span></p>
+                    <p><span class="why_us"> How can I become a Globl Cargo Logistics Customer?  </span><span></span></p>
+                    <p> <span class="why_us"> Are there any items you don't carry?</span><span></span></p>
+                    <p> <span class="why_us"> Can I buy labels on account? </span><span></span></p>
+                    <p> <span class="why_us"> Can I buy labels online? </span><span></span></p>
+                    <p> <span class="why_us"> Can I send a parcel to arrive at a specific time?</span><span></span></p>
+                    <p> <span class="why_us"> Can I send internationally? </span><span></span></p>
+                    <p> <span class="why_us"> Can I use Fastway labels in any location you operate?</span><span></span></p>
+                    <p><span class="why_us"> How do I arrange a pick-up? </span><span></span></p>
+                    <p><span class="why_us"> How do I order labels and satchels? </span><span></span></p>
+                    <p> <span class="why_us"> How do I track my delivery?</span><span></span></p>
+                    <p><span class="why_us"> How should I package my item? </span><span></span></p>
+                    <p><span class="why_us"> I'm a high-volume sender. Do I have to use the manual label system? </span><span></span></p>
+                    <p><span class="why_us">What are your payment methods?  </span><span></span></p>
+                    <p> <span class="why_us">What's your label refund policy? </span><span></span></p>
+                    <p> <span class="why_us"> When will the courier pick up my parcels? </span><span></span></p>
+                    <p> <span class="why_us">Who is my contact at Global Cargo Logistics? </span><span></span></p>
+                    <p><span class="why_us">Why are your labels prepaid?  </span><span></span></p>
 
-                    <b>
-                        <p>Surname: &nbsp;<span>Fabchi</span></p>
-                        <p>Initials: &nbsp;<span>RJ</span></p>
-                        <p>Email: &nbsp;<span>fabchirajoul@gmail.com</span></p>
-                        <p>Phone Number: &nbsp;<span>+2763382663</span></p>
-                        <p>Nationality: &nbsp;<span>Cameroon</span></p>
-                        <p>Discipline: &nbsp;<span>MINING ENGINEER | Machine learning Expert</span></p>
-                    </b>
+                   </div>
+                   <a href="#" @click.prevent="faq_category3=!faq_category3">Pricing</a><br>
+                   <div x-show="faq_category3">
+                    sdfgnhgjk
+
+                   </div>
+                   <a href="#" @click.prevent="faq_category4=!faq_category4">Limited liability cover</a><br>
+                   <div x-show="faq_category4">
+                    sdfgnhgjk
+
+                   </div>
+                   <a href="#" @click.prevent="faq_category5=!faq_category5">Franchising</a><br>
+                   <div x-show="faq_category5">
+                    sdfgnhgjk
+
+                   </div>
                 </div>
             </div>
-
         </section>
 
         <section>
