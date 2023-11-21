@@ -436,6 +436,34 @@ document.addEventListener("alpine:init", () => {
           (this.currentIndexdiferent1 + 1) % this.imagesDifferent1.length;
       },
 
+      formData : [
+        { name: '', email: '', message: '' },],
+        name: '',
+        email: '',
+        message: '',
+        contact_message:"",
+
+      submitForm() {
+        if (!isValidEmail(this.email)) {
+          // alert('Invalid email address');
+          this.contact_message = "Sorry the email address entered is wrong";
+          return;
+        }
+
+        // Use Axios to send data to the server
+        axios.post('process_form.php', this.$data.formData)
+          .then(response => {
+            console.log(response.data);
+            this.contact_message = "Thank you for contacting us. An agent will get back to you shortly";
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            // alert('Error submitting form. Please try again.');
+            this.contact_message = "There seems to be an error. Please ensure that your details are entered correctly";
+          });
+      },
+
+
       init() {
         this.activeImage = this.images.length > 0 ? this.images[0] : null;
         this.startTimer();

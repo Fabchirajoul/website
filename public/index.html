@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Global Cargo Logistics</title>
     <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <script src="code.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <!-- Google Fonts -->
@@ -546,7 +548,7 @@
         <section>
             <div class="row" x-show="contact_us" x-cloak>
                 <!-- Fabchi -->
-                <div class="col l3 m6 s6">
+                <div class="col-md-3">
                     <img src="images/RJ.jpeg" width="75%">
                     <b>
                         <p>Surname: &nbsp;<span>Fabchi</span></p>
@@ -557,41 +559,19 @@
                         <p>Discipline: &nbsp;<span>MINING ENGINEER | Machine learning Expert</span></p>
                     </b>
                 </div>
-                <div class="col l3 m6 s6">
-                    <form action="PHP/file.php" method="post">
+                <div class="col-md-4">
+                    <form  x-on:submit.prevent="submitForm">
                         <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" name="name" x-model="formData.name" required>
                 
                         <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" x-model="formData.email" required>
                 
                         <label for="message">Message:</label>
-                        <textarea id="message" name="message" required></textarea>
+                        <textarea id="message" name="message" required x-model="formData.message"></textarea>
                 
                         <input type="submit" value="Submit">
                     </form>
-                </div>
-                <div class="col l3 m6 s6">
-                    <img src="images/MTE.jpeg" width="75%">
-                    <b>
-                        <p>Surname: &nbsp;<span>MOJEWA</span></p>
-                        <p>Initials: &nbsp;<span>T</span></p>
-                        <p>Email: &nbsp;<span>tswelopelemojewa@gmail.com</span></p>
-                        <p>Phone Number: &nbsp;<span>+27790985214</span></p>
-                        <p>Nationality: &nbsp;<span>South Africa</span></p>
-                        <p>Discipline: &nbsp;<span>ELECTRICAL ENGINEER | Machine learning Expert</span></p>
-                    </b>
-                </div>
-                <div class="col l3 m6 s6">
-                    <img src="images/OBY.jpeg" width="75%">
-                    <b>
-                        <p>Surname: &nbsp;<span>NWOSU</span></p>
-                        <p>Initials: &nbsp;<span>OCV</span></p>
-                        <p>Email: &nbsp;<span>kingemjay3355@gmail.com</span></p>
-                        <p>Phone Number: &nbsp;<span>+27683443129</span></p>
-                        <p>Nationality: &nbsp;<span>Nigeria</span></p>
-                        <p>Discipline: &nbsp;<span>GEOPHYSICS | Machine learning Expert</span></p>
-                    </b>
                 </div>
             </div>
         </section>
