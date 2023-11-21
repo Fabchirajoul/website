@@ -328,25 +328,56 @@ document.addEventListener("alpine:init", () => {
       },
 
       imagesDifferent: [
-        {images:'images/why_different/1.png',text1:'Automatic label printing',text2:'Dispatching is made simple with our easy to use eWallet system.'},
-        {images:'images/why_different/2.png',text1:'Economical service',text2:'A budget-priced service to enhance your bottom line.'},
-        {images:'images/why_different/3.png',text1:'No fuel levies',text2:'A common hidden cost amongst many freight providers.'},
-        {images:'images/why_different/4.png',text1:'No re-delivery fees',text2:'Particularly important when delivering to residential customers.'},
-        {images:'images/why_different/5.png',text1:'Parcel coverage*',text2:'We include limited liability coverage at no extra cost'},
-        {images:'images/why_different/6.png',text1:'Reliability',text2:'No booking required with our daily designated pick-up times.'},
+        "images/why_different/1.png",
+        "images/why_different/2.png",
+        "images/why_different/3.png",
+        "images/why_different/4.png",
+        "images/why_different/5.png",
+        "images/why_different/6.png",
       ],
       currentIndexdiferent: 0,
       differentImage(){
         this.currentIndexdiferent = (this.currentIndexdiferent + 1) % this.imagesDifferent.length;
 
       },
+
+      textsDifferent: [
+        {text1:'Automatic label printing',text2:'Dispatching is made simple with our easy to use eWallet system.'},
+        {text1:'Economical service',text2:'A budget-priced service to enhance your bottom line.'},
+        {text1:'No fuel levies',text2:'A common hidden cost amongst many freight providers.'},
+        {text1:'No re-delivery fees',text2:'Particularly important when delivering to residential customers.'},
+        {text1:'Parcel coverage*',text2:'We include limited liability coverage at no extra cost'},
+        {text1:'Reliability',text2:'No booking required with our daily designated pick-up times.'},
+
+        
+      ],
+      currentIndexdiferentText: 0,
+      differenText(){
+        this.currentIndexdiferentText = (this.currentIndexdiferentText + 1) % this.textsDifferent.length;
+      },
+
+      textsDifferent1: [
+        {text3:'no-hidden-fees',text4:'No booking required with our daily designated pick-up times.'},
+        {text3:'online-track-and-trace',text4:'Making it easy to order, track and report on all your shipping movements with the customer portal.'},
+        {text3:'our-technology',text4:'Fastway is dedicated to producing technology solutions to make business easier for our customers.'},
+         {text3:'savings',text4:'Fastway has shown through many case studies show it has dramatically reduced customers freight bills, up to and in excess of 35% whilst improving service levels.'},
+        {text3:'simplicity',text4:'An easy to use system which frees you up to focus on your core business and your customers'},
+        {text3:'residential-expertise',text4:'When a customer isn’t at home a calling card is left and redelivery is arranged at no extra cost. We also have the flexibility for the sender to leave authorisation on specific parcels to deliver without a signature or provide direction to leave goods without a signature when no one is at home. This can be done at any time of the day or night by utilising Fastway’s easy to use online customer website.'},
+       
+      ],
+      currentIndexdiferentText1: 0,
+      differenText(){
+        this.currentIndexdiferentText1 = (this.currentIndexdiferentText1 + 1) % this.textsDifferent1.length;
+      },
+
+
       imagesDifferent1: [
-        "images/why_different/our-technology.png",
-        "images/why_different/parcel-coverage.png",
-        "images/why_different/reliable.png",
-        "images/why_different/residential-expertise.png",
-        "images/why_different/savings.png",
-        "images/why_different/simplicity.png",
+        "images/why_different/7.png",
+        "images/why_different/8.png",
+        "images/why_different/9.png",
+        "images/why_different/11.png",
+        "images/why_different/12.png",
+        "images/why_different/10.png",
       ],
       currentIndexdiferent1: 0,
       differentImage1(){

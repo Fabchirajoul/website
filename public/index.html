@@ -28,9 +28,9 @@
     </style>
 </head>
 
-<body class="container">
-    <main class="card" x-data="CAPSTONEWIDGET" x-cloak>
-        <!-- <section> -->
+<body  class="container">
+    <main  class="card"  x-data="CAPSTONEWIDGET" x-cloak>
+        <section>
 
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-black">
 
@@ -81,6 +81,7 @@
 
         </nav>
         <br><br><br>
+        </section>
         <!-- home page  -->
         <section>
             <div class="row">
@@ -200,8 +201,6 @@
                         and associates and a commitment through our various services to providing consistent, reliable
                         and cost-effective solutions for meeting customer needs and service satisfaction.</p>>
                 </div>
-
-
             </div>
         </section>
 
@@ -481,7 +480,7 @@
                 <div class="row" x-show="why_we_are_different">
 
                     <div class="col-md-3">
-                        <h5>OUR CUSTOMERS</h5>
+                        <h5>WHY WE ARE DIFFERENT</h5>
                         <hr>
 
                         <a class="link-secondary me-3" x-on:click="openHome('about')" href="#">ABOUT US</a><br>
@@ -500,9 +499,10 @@
 
                         <img :src="imageWhyUs[currentIndex].image" alt="Current Image" width="100%"
                             class="link-secondary me-5"><br>
-                        <span class="why_us" x-text="imageWhyUs[currentIndex].text1"
+                            <span x-text="imageWhyUs[currentIndex].text2" class="link-secondary me-3"></span><br>
+                        <span class="why_us" x-text="imageWhyUs[currentIndex].text2"
                             class="link-secondary me-3"></span><br>
-                        <span x-text="imageWhyUs[currentIndex].text2" class="link-secondary me-3"></span><br>
+                        
                         <hr>
 
                     </div>
@@ -510,37 +510,32 @@
                     <div class="col-md-1">
 
                        <template x-for="(image, currentIndexdiferent) in imagesDifferent" :key="currentIndexdiferent">
-                        <img :src="imagesDifferent[currentIndexdiferent].images" alt="Current Image" width="100%"
+                        <img :src="imagesDifferent[currentIndexdiferent]" alt="Current Image" width="100%"
                         class="link-secondary me-1">
-                        <p class="why_us" x-text="imagesDifferent[currentIndexdiferent].text1"></p>
-                        <p x-text="imagesDifferent[currentIndexdiferent].text2"></p>
+                       
                        </template>
                     </div>
                     <br>
 
                     <div class="col-md-3">
-                        <template x-for="(image, currentIndexdiferent) in imagesDifferent" :key="currentIndexdiferent">
-                            <p class="why_us" x-text="imagesDifferent[currentIndexdiferent].text1"></p>
-                            <p x-text="imagesDifferent[currentIndexdiferent].text2"></p>
-                        </template>
-                          
+                        <template x-for="(text, currentIndexdiferentText) in textsDifferent">
+                            <p><span class="why_us" x-text="textsDifferent[currentIndexdiferentText].text1"></span ><br><span x-text="textsDifferent[currentIndexdiferentText].text2"></span></p>
+                        </template>      
                 </div>
 
                 <div class="col-md-1" >
 
                     <template x-for="(image, currentIndexdiferent1) in imagesDifferent1" :key="currentIndexdiferent1">
-                     <img :src="image" alt="Current Image" width="100%"
-                     class="image-container img">
+                     <p><img :src="image" alt="Current Image" width="100%"
+                        class="image-container img"></p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                     </template>
                  </div>
                 <br>
 
                 <div class="col-md-4">
-                    <p class="why_us">Boplaas
-                    </p>
-                    <p>Fast, courteous, and professional at all times.</p>
-                    
-                    <br>     
+                    <template x-for="(text, currentIndexdiferentText1) in textsDifferent1">
+                        <p><span class="why_us" x-text="textsDifferent1[currentIndexdiferentText1].text3"></span ><br><span x-text="textsDifferent1[currentIndexdiferentText1].text4"></span></p>
+                    </template>     
             </div>
 
 
