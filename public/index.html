@@ -129,7 +129,7 @@
                     </p>
                 </div>
 
-                <div class="col-md-5">
+                <div class="col-md-4">
                     <h3>OUR SERVICES</h3>
                     <p style="text-align:justify"></p>
                     <a href="#" x-on:click="openHome('our_services')" x-text="imageStart[currentIndex].title"></a>
@@ -137,7 +137,7 @@
                     <p>
                         <br>
                         <!-- <template x-for="image in images"> -->
-                        <img :src="imageStart[currentIndex].image" alt="Current Image" width="100%">
+                        <img :src="imageStart[currentIndex].image" alt="Current Image for our Servoces" width="100%">
                         <!-- </template> -->
                 </div>
             </div>
@@ -558,15 +558,18 @@
                     </b>
                 </div>
                 <div class="col l3 m6 s6">
-                    <img src="images/KLR.jpeg" width="100%">
-                    <b>
-                        <p>Surname: &nbsp;<span>LUKWAGO</span></p>
-                        <p>Initials: &nbsp;<span>RK</span></p>
-                        <p>Email: &nbsp;<span>lukwagorsaved@gmail.com</span></p>
-                        <p>Phone Number: &nbsp;<span>+27738976343</span></p>
-                        <p>Nationality: &nbsp;<span>Uganda</span></p>
-                        <p>Discipline: &nbsp;<span>INFORMATION TECH AND SYSTEMS | Machine learning Expert</span></p>
-                    </b>
+                    <form action="PHP/file.php" method="post">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" required></textarea>
+                
+                        <input type="submit" value="Submit">
+                    </form>
                 </div>
                 <div class="col l3 m6 s6">
                     <img src="images/MTE.jpeg" width="75%">
@@ -893,7 +896,7 @@
 
 
     </main>
-    <div class="card">
+    <div class="card" >
         <section>
             <footer class="page-footer">
                 <div class="footer-copyright">

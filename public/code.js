@@ -10,7 +10,7 @@ document.addEventListener("alpine:init", () => {
       about: false,
       faq: false,
       our_services: false,
-      homepage2:true,
+      homepage2: true,
       our_awards: false,
       our_customers: false,
       our_evolution: false,
@@ -31,7 +31,7 @@ document.addEventListener("alpine:init", () => {
         this.faq = false;
         this.our_services = false;
         this.our_awards = false;
-        this.homepage2=true;
+        this.homepage2 = true;
         this.our_customers = false;
         this.our_evolution = false;
         this.why_we_are_different = false;
@@ -41,7 +41,7 @@ document.addEventListener("alpine:init", () => {
           this.contact_us = true;
           this.about = false;
           this.tracking = false;
-          this.homepage2=false;
+          this.homepage2 = false;
           this.faq = false;
           this.our_services = false;
           this.our_awards = false;
@@ -51,7 +51,7 @@ document.addEventListener("alpine:init", () => {
         } else if (currentSection == "why_us") {
           this.why_us = true;
           this.homepage = false;
-          this.homepage2=false;
+          this.homepage2 = false;
           this.contact_us = false;
           this.about = false;
           this.tracking = false;
@@ -63,7 +63,7 @@ document.addEventListener("alpine:init", () => {
           this.why_we_are_different = false;
         } else if (currentSection == "tracking") {
           this.why_us = false;
-          this.homepage2=false;
+          this.homepage2 = false;
           this.homepage = false;
           this.contact_us = false;
           this.about = false;
@@ -76,7 +76,7 @@ document.addEventListener("alpine:init", () => {
           this.why_we_are_different = false;
         } else if (currentSection == "about") {
           this.why_us = false;
-          this.homepage2=false;
+          this.homepage2 = false;
           this.homepage = false;
           this.contact_us = false;
           this.about = true;
@@ -90,7 +90,7 @@ document.addEventListener("alpine:init", () => {
           this.why_we_are_different = false;
         } else if (currentSection == "faq") {
           this.why_us = false;
-          this.homepage2=false;
+          this.homepage2 = false;
           this.homepage = false;
           this.contact_us = false;
           this.about = false;
@@ -104,7 +104,7 @@ document.addEventListener("alpine:init", () => {
         } else if (currentSection == "our_services") {
           this.why_us = false;
           this.homepage = false;
-          this.homepage2=false;
+          this.homepage2 = false;
           this.contact_us = false;
           this.about = false;
           this.tracking = false;
@@ -114,10 +114,10 @@ document.addEventListener("alpine:init", () => {
           this.our_customers = false;
           this.our_evolution = false;
           this.why_we_are_different = false;
-        }else if (currentSection == "our_awards") {
+        } else if (currentSection == "our_awards") {
           this.why_us = false;
           this.homepage = false;
-          this.homepage2=false;
+          this.homepage2 = false;
           this.contact_us = false;
           this.about = false;
           this.tracking = false;
@@ -127,10 +127,10 @@ document.addEventListener("alpine:init", () => {
           this.our_customers = false;
           this.our_evolution = false;
           this.why_we_are_different = false;
-        }else if (currentSection == "our_customers") {
+        } else if (currentSection == "our_customers") {
           this.why_us = false;
           this.homepage = false;
-          this.homepage2=false;
+          this.homepage2 = false;
           this.contact_us = false;
           this.about = false;
           this.tracking = false;
@@ -140,10 +140,10 @@ document.addEventListener("alpine:init", () => {
           this.our_customers = true;
           this.our_evolution = false;
           this.why_we_are_different = false;
-        }else if (currentSection == "our_evolution") {
+        } else if (currentSection == "our_evolution") {
           this.why_us = false;
           this.homepage = false;
-          this.homepage2=false;
+          this.homepage2 = false;
           this.contact_us = false;
           this.about = false;
           this.tracking = false;
@@ -153,10 +153,10 @@ document.addEventListener("alpine:init", () => {
           this.our_customers = false;
           this.our_evolution = true;
           this.why_we_are_different = false;
-        }else if (currentSection == "why_we_are_different") {
+        } else if (currentSection == "why_we_are_different") {
           this.why_us = false;
           this.homepage = false;
-          this.homepage2=false;
+          this.homepage2 = false;
           this.contact_us = false;
           this.about = false;
           this.tracking = false;
@@ -195,28 +195,32 @@ document.addEventListener("alpine:init", () => {
       },
       imageStart: [
         {
-          image: "/images/4.jpg",
+          image: "/images/our_services/airfright.jpg",
           text: "With years of experience in the freight industry, GLOBAL CARGO LOGISTICS is known for offering reliable and efficient air-freight forwarding service throughout the world.",
           title: "AIRFREIGHT SERVICES",
         },
         {
-          image: "/images/5.jpg",
+          image: "/images/our_services/Sea-Freight.jpg",
           text: "With limited restrictions in the size and weight of the goods, we provide a full array of ocean freight forwarding services right from door to door pick up, advance tracking technology and managing shipping documents.",
           title: "SEA FREIGHT SERVICES",
         },
         {
-          image: "/images/6.jpg",
+          image: "/images/our_services/warehouse.jpg",
           text: "We aspire to be your reliable Supply Chain Partner by providing high level professional warehousing services and provide assurance of the safe arrival of your right product anywhere and at anytime.",
           title: "WAREHOUSING AND DISTRIBUTION",
         },
       ],
-      currentIndex: 0,
+      currentIndex: null,
 
       startTimer() {
         setInterval(() => {
           this.currentIndex = (this.currentIndex + 1) % this.imageStart.length;
-          this.text1 = "";
-        }, 8000);
+      
+          // Check if currentIndex reaches the end of the array
+          if (this.currentIndex === this.imageStart.length) {
+            this.currentIndex = this.imageStart.length-1; // Reset to -1 to restart the loop
+          }
+        }, 10000);
       },
 
       imageShareholder: [
@@ -342,40 +346,81 @@ document.addEventListener("alpine:init", () => {
         "images/why_different/6.png",
       ],
       currentIndexdiferent: 0,
-      differentImage(){
-        this.currentIndexdiferent = (this.currentIndexdiferent + 1) % this.imagesDifferent.length;
-
+      differentImage() {
+        this.currentIndexdiferent =
+          (this.currentIndexdiferent + 1) % this.imagesDifferent.length;
       },
 
       textsDifferent: [
-        {text1:'Automatic label printing',text2:'Dispatching is made simple with our easy to use eWallet system.'},
-        {text1:'Economical service',text2:'A budget-priced service to enhance your bottom line.'},
-        {text1:'No fuel levies',text2:'A common hidden cost amongst many freight providers.'},
-        {text1:'No re-delivery fees',text2:'Particularly important when delivering to residential customers.'},
-        {text1:'Parcel coverage*',text2:'We include limited liability coverage at no extra cost'},
-        {text1:'Reliability',text2:'No booking required with our daily designated pick-up times.'},
-
-        
+        {
+          text1: "Automatic label printing",
+          text2:
+            "Dispatching is made simple with our easy to use eWallet system.",
+        },
+        {
+          text1: "Economical service",
+          text2: "A budget-priced service to enhance your bottom line.",
+        },
+        {
+          text1: "No fuel levies",
+          text2: "A common hidden cost amongst many freight providers.",
+        },
+        {
+          text1: "No re-delivery fees",
+          text2:
+            "Particularly important when delivering to residential customers.",
+        },
+        {
+          text1: "Parcel coverage*",
+          text2: "We include limited liability coverage at no extra cost",
+        },
+        {
+          text1: "Reliability",
+          text2: "No booking required with our daily designated pick-up times.",
+        },
       ],
       currentIndexdiferentText: 0,
-      differenText(){
-        this.currentIndexdiferentText = (this.currentIndexdiferentText + 1) % this.textsDifferent.length;
+      differenText() {
+        this.currentIndexdiferentText =
+          (this.currentIndexdiferentText + 1) % this.textsDifferent.length;
       },
 
       textsDifferent1: [
-        {text3:'no-hidden-fees',text4:'No booking required with our daily designated pick-up times.'},
-        {text3:'online-track-and-trace',text4:'Making it easy to order, track and report on all your shipping movements with the customer portal.'},
-        {text3:'our-technology',text4:'Fastway is dedicated to producing technology solutions to make business easier for our customers.'},
-         {text3:'savings',text4:'Fastway has shown through many case studies show it has dramatically reduced customers freight bills, up to and in excess of 35% whilst improving service levels.'},
-        {text3:'simplicity',text4:'An easy to use system which frees you up to focus on your core business and your customers'},
-        {text3:'residential-expertise',text4:'When a customer isn’t at home a calling card is left and redelivery is arranged at no extra cost. We also have the flexibility for the sender to leave authorisation on specific parcels to deliver without a signature or provide direction to leave goods without a signature when no one is at home. This can be done at any time of the day or night by utilising Fastway’s easy to use online customer website.'},
-       
+        {
+          text3: "no-hidden-fees",
+          text4: "No booking required with our daily designated pick-up times.",
+        },
+        {
+          text3: "online-track-and-trace",
+          text4:
+            "Making it easy to order, track and report on all your shipping movements with the customer portal.",
+        },
+        {
+          text3: "our-technology",
+          text4:
+            "Fastway is dedicated to producing technology solutions to make business easier for our customers.",
+        },
+        {
+          text3: "savings",
+          text4:
+            "Fastway has shown through many case studies show it has dramatically reduced customers freight bills, up to and in excess of 35% whilst improving service levels.",
+        },
+        {
+          text3: "simplicity",
+          text4:
+            "An easy to use system which frees you up to focus on your core business and your customers",
+        },
+        {
+          text3: "residential-expertise",
+          text4:
+            "When a customer isn’t at home a calling card is left and redelivery is arranged at no extra cost. We also have the flexibility for the sender to leave authorisation on specific parcels to deliver without a signature or provide direction to leave goods without a signature when no one is at home. This can be done at any time of the day or night by utilising Fastway’s easy to use online customer website.",
+        },
       ],
       currentIndexdiferentText1: 0,
-      differenText(){
-        this.currentIndexdiferentText1 = (this.currentIndexdiferentText1 + 1) % this.textsDifferent1.length;
+      differenText() {
+        this.currentIndexdiferentText1 =
+          (this.currentIndexdiferentText1 + 1) % this.textsDifferent1.length;
       },
-
 
       imagesDifferent1: [
         "images/why_different/7.png",
@@ -386,9 +431,9 @@ document.addEventListener("alpine:init", () => {
         "images/why_different/10.png",
       ],
       currentIndexdiferent1: 0,
-      differentImage1(){
-        this.currentIndexdiferent1 = (this.currentIndexdiferent1 + 1) % this.imagesDifferent1.length;
-
+      differentImage1() {
+        this.currentIndexdiferent1 =
+          (this.currentIndexdiferent1 + 1) % this.imagesDifferent1.length;
       },
 
       init() {
