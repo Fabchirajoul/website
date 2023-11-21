@@ -49,6 +49,10 @@ hr{
     font-size: 20px;
 }
 
+.image-container img {
+    margin-right: 205px; 
+  }
+
 @media print {
     * {
       display: none;

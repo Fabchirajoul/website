@@ -327,10 +327,39 @@ document.addEventListener("alpine:init", () => {
         }, 2000);
       },
 
+      imagesDifferent: [
+        {images:'images/why_different/1.png',text1:'Automatic label printing',text2:'Dispatching is made simple with our easy to use eWallet system.'},
+        {images:'images/why_different/2.png',text1:'Economical service',text2:'A budget-priced service to enhance your bottom line.'},
+        {images:'images/why_different/3.png',text1:'No fuel levies',text2:'A common hidden cost amongst many freight providers.'},
+        {images:'images/why_different/4.png',text1:'No re-delivery fees',text2:'Particularly important when delivering to residential customers.'},
+        {images:'images/why_different/5.png',text1:'Parcel coverage*',text2:'We include limited liability coverage at no extra cost'},
+        {images:'images/why_different/6.png',text1:'Reliability',text2:'No booking required with our daily designated pick-up times.'},
+      ],
+      currentIndexdiferent: 0,
+      differentImage(){
+        this.currentIndexdiferent = (this.currentIndexdiferent + 1) % this.imagesDifferent.length;
+
+      },
+      imagesDifferent1: [
+        "images/why_different/our-technology.png",
+        "images/why_different/parcel-coverage.png",
+        "images/why_different/reliable.png",
+        "images/why_different/residential-expertise.png",
+        "images/why_different/savings.png",
+        "images/why_different/simplicity.png",
+      ],
+      currentIndexdiferent1: 0,
+      differentImage1(){
+        this.currentIndexdiferent1 = (this.currentIndexdiferent1 + 1) % this.imagesDifferent1.length;
+
+      },
+
       init() {
         this.activeImage = this.images.length > 0 ? this.images[0] : null;
         this.startTimer();
         this.startTimerWhyUs();
+        this.differentImage();
+        this.differentImage1();
       },
 
       // get all price plans ends here
