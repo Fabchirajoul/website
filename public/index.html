@@ -562,6 +562,7 @@
                     <a class="link-secondary me-3" x-on:click="openHome('shareholders')" href="#">BRANCH
                         MANAGERS</a><br>
                     <hr>
+
                     <div class="social-media">
                         <p>Connect with us :</p>
                         <div class="social-icons">
@@ -580,18 +581,21 @@
                         </div>
                       </div>
                 </div>
-
-                <div class="col-md-5">
-                    <p class="why_us">OUR LOCATIONS</p>
-
-                    
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.7910881105176!2d28.045330475404974!3d-26.20347336394429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950e9bfdff2349%3A0x82965b6b717a45e4!2s112%20Helen%20Joseph%20St%2C%20Johannesburg%2C%202000!5e0!3m2!1sen!2sza!4v1700670795512!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                
-                
-                
-                </div>
-                <div class="col-md-4">
-                     <div class="contact-form">
+                <div class="col-md-9">
+                    <div >
+                        
+                       
+                        <div class="form">
+                          <div class="contact-info">
+                            <h3 class="title">Our Hub Locations</h3>
+                            <iframe frameborder=0 style='width:100%;height:500px;' src='//www.zeemaps.com/pub?group=4848734'> </iframe>
+                  
+                           
+                  
+                            
+                          </div>
+                  
+                          <div class="contact-form">
                             <span class="circle one"></span>
                             <span class="circle two"></span>
                   
@@ -604,21 +608,19 @@
                                 <input type="email" name="email" id="email" class="input" placeholder="Email" required/>
                                 
                               </div>
+
                               <div class="input-container">
-                                <input type="text" name="country" id="country" class="input" placeholder="Country" required/>
-                                <datalist id="country">
-                                    <option value="1"></option>
-                                </datalist>
+                                <input type="text" name="country" id="country" class="input" placeholder="Your Country" required/>
                                 
                               </div>
                               <div class="input-container">
-                                <input type="tel" name="phone" id="tel" class="input" placeholder="Telephone" required/>
+                                <input type="number" name="phone" min="10"  id="tel" class="input" placeholder="Telephone" required/>
                                 
                               </div>
                               <div class="input-container textarea">
                                 <textarea name="message" id="message" class="input"></textarea>
                               </div>
-                              <button class="btn" @click="sendEmail()">Send Message</button>
+                              <input type="submit" value="Send Message" class="btn" />
                             </form>
                           </div>
                         </div>
@@ -937,7 +939,23 @@
         </section>
     </main>
     <script src="https://smtpjs.com/v3/smtp.js"> </script>
-    
+    <script>
+        function sendEmail(){
+        Email.send({
+        SecureToken :"24ac170b-9567-4115-bf1f-068053800cd7",
+        To : 'fabchirajoul@gmail.com',
+        From : "gabrielmilner7@gmail.com",
+        Subject : document.getElementById("subject").value,
+        Body : "Subject: "+ document.getElementById("subject").value
+             + " <br> Email: "+ document.getElementById("email").value
+             + " <br> Country: "+ document.getElementById("country").value
+             + "<br> Telephone: "+ document.getElementById("tel").value
+             + "<br>  Message: "+ document.getElementById("message").value,
+    }).then(
+    message => alert("Thanks for contacting us. An agent will get in torch soon")
+    );
+            }
+    </script>
     </body>
     <div class="card" >
         <section>
