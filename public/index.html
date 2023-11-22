@@ -157,8 +157,8 @@
                         requirements
                         and we will provide you with detailed veterinary time schedules.<br><br>
 
-                        <a class="why_us" style="text-align: center;" href="#"
-                            x-on:click="openHome('INTERNATIONAL')">READ MORE INT'NAL SERVICES</a>
+                        <a class="btn" style="text-align: center; color: blue;" href="#"
+                            x-on:click="openHome('INTERNATIONAL')">READ MORE ON INTERNATIONAL SERVICES</a>
                     </p>
 
 
@@ -171,8 +171,8 @@
                         arrange for your pet’s
                         domestic flight and provide you with the airline approved pet travel crates.
                         Our fleet of pet courier vehicles is fully insured, branded and air-conditioned.<br><br>
-                        <a class="why_us" style="text-align: center;" href="#" x-on:click="openHome('LOCAL')">READ
-                            MORE LOCAL SERVICES</a>
+                        <a class="btn" style="text-align: center; color: blue;" href="#" x-on:click="openHome('LOCAL')">READ
+                            MORE ON LOCAL SERVICES</a>
                     </p>
                 </div>
                 <div class="col-md-4">
@@ -183,8 +183,8 @@
                         and road transport
                         to neighbouring countries. We can arrange your animal travel - onward flights to other
                         destinations as well as offer transit services.<br><br>
-                        <a class="why_us" style="text-align: center;" href="#" x-on:click="openHome('IMPORT')">READ
-                            MORE IMPORT SERVICES</a>
+                        <a class="btn" style="text-align: center; color: blue;" href="#" x-on:click="openHome('IMPORT')">READ
+                            MORE ON IMPORT SERVICES</a>
                     </p>
 
                 </div>
@@ -1749,20 +1749,62 @@
         }
     </script>
 </body>
+
+
+
 <div class="card">
     <section>
         <footer class="page-footer">
-            <div class="footer-copyright">
-                <div class="row">
-                    <div class="col m8 l12 s12" style="text-align: center;">
-                        © 2023 Copyright Reserved<br>
-
-                        <a class="grey-text text-lighten-4 right" href="#!">UJ & ACCENTURE WORK READINESS
-                            PROGRAM</a>
-                    </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-3">
+                  <p class="white-text" x-on:click="openHome('about')" >ABOUT</p>
+                  <a href="#" x-on:click="openHome('why_us')"  style="color: white;">WHY US</a><br>
+                  <a href="#" x-on:click="openHome('about')" href="#"  style="color: white;">BRANCH MANAGERS</a><br>
+                  <a href="#" x-on:click="openHome('branch_managers')" style="color: white;">OUR REWARDS</a><br>
+                  <a href="#" x-on:click="openHome('branch_managers')" style="color: white;">OUR CUSTOMERS</a><br>
+                  <a href="#" x-on:click="openHome('branch_managers')" style="color: white;">OUR EVOLUTION</a><br>
+                  <a href="#" x-on:click="openHome('branch_managers')" style="color: white;">OUR REWARDS</a><br>
+                  <a href="#" x-on:click="openHome('branch_managers')" style="color: white;">WHY WE ARE DIFFERENT</a><br>
+                  
                 </div>
+
+                <div class="col-md-2">
+                    <p class="white-text" x-on:click="openHome('why_us')" >WHY US</p>
+                    
+                  <a href="#" x-on:click="openHome('branch_managers')" style="color: white;">BRANCH MANAGERS</a>
+                  
+                 
+                  </div>
+
+                  <div class="col-md-3" >
+                    <p class="white-text">OUR SERVICES</p>
+                    <a href="#" x-on:click="openHome('LOCAL')" style="color: white;">LOCAL</a><br>
+                    <a href="#" x-on:click="openHome('INTERNATIONAL')" style="color: white;">INTERNATIONAL</a><br>
+                    <a href="#" x-on:click="openHome('IMPORT')" style="color: white;">IMPORT</a><br>
+                   
+                    <a href="#" x-on:click="openHome('our_services')" style="color: white;">WAREHOUSING</a><br>
+                    <a href="#" x-on:click="openHome('our_services')" style="color: white;">SEAFREIGHT</a><br>
+                    <a href="#" x-on:click="openHome('our_services')" style="color: white;">AIRFREIGHT</a><br>
+                  </div>
+
+
+                  <div class="col-md-2">
+                    <p class="white-text">GET IN TORCH</p>
+                    <a href="#" x-on:click="openHome('our_services')" style="color: white;">CONTACT</a><br>
+                    <a href="#" x-on:click="openHome('our_services')" style="color: white;">FAQ</a><br>
+                    
+                  </div>
+
+                  <div class="col-md-2">
+                    <p class="white-text">GPS</p>
+                    <a href="#" x-on:click="openHome('our_services')" style="color: white;">TRACKING</a><br>
+                  </div>
+                
+              </div>
             </div>
-        </footer>
+            
+          </footer>
     </section>
 </div>
 
