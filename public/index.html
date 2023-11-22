@@ -613,23 +613,25 @@
                             <span class="circle one"></span>
                             <span class="circle two"></span>
                   
-                            <form onsubmit="sendEmail(); reset(); return false;">
+                            <form onsubmit="sendEmail()">
                               <h3 class="title">Contact us</h3>
+                              <p x-text="contact_message"></p>
                               <div class="input-container">
-                                <input type="text" name="subject" id="subject" class="input" placeholder="Subject" required/>
+                                <input type="text"  name="subject" id="subject" class="input" placeholder="Subject" required/>
                               </div>
                               <div class="input-container">
-                                <input type="email" name="email" id="email" class="input" placeholder="Email" required/>
+                                <input  type="email" name="email" id="email" class="input" placeholder="Email" required/>
                                 
                               </div>
                               <div class="input-container">
-                                <input type="tel" name="phone" id="tel" class="input" placeholder="Telephone" required/>
+                                <input type="tel" name="phone"  id="tel" class="input" placeholder="Telephone" required/>
                                 
                               </div>
                               <div class="input-container textarea">
                                 <textarea name="message" id="message" class="input"></textarea>
                               </div>
-                              <input type="submit" value="Send" class="btn" />
+                              
+                              <button @click="sendEmail()" class="btn">Send</button>
                             </form>
                           </div>
                         </div>
@@ -949,20 +951,7 @@
     </main>
     <script src="https://smtpjs.com/v3/smtp.js"> </script>
     <script>
-        function sendEmail(){
-        Email.send({
-        SecureToken :"24ac170b-9567-4115-bf1f-068053800cd7",
-        To : 'fabchirajoul@gmail.com',
-        From : "gabrielmilner7@gmail.com",
-        Subject : document.getElementById("subject").value,
-        Body : "Subject: "+ document.getElementById("subject").value
-             + " <br> Email: "+ document.getElementById("email").value
-             + "<br> Telephone: "+ document.getElementById("tel").value
-             + "<br>  Message: "+ document.getElementById("message").value,
-    }).then(
-    message => alert(message)
-    );
-            }
+        
     </script>
     </body>
     <div class="card" >
@@ -970,7 +959,7 @@
             <footer class="page-footer">
                 <div class="footer-copyright">
                     <div class="row">
-                        <div class="col m8 l12 s12" style="text-align: center;">
+                        <div class="col m8 l3 s3" style="text-align: center;">
                             © 2023 Copyright Reserved<br>
 
                             <a class="grey-text text-lighten-4 right" href="#!">UJ & ACCENTURE WORK READINESS

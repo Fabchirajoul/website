@@ -168,6 +168,27 @@ document.addEventListener("alpine:init", () => {
           this.why_we_are_different = true;
         }
       },
+      contact_message:"",
+      sendEmail() {
+        Email.send({
+          SecureToken: "24ac170b-9567-4115-bf1f-068053800cd7",
+          To: "fabchirajoul@gmail.com",
+          From: "gabrielmilner7@gmail.com",
+          Subject: document.getElementById("subject").value,
+          Body:
+            "Subject: " +
+            document.getElementById("subject").value +
+            " <br> Email: " +
+            document.getElementById("email").value +
+            "<br> Telephone: " +
+            document.getElementById("tel").value +
+            "<br>  Message: " +
+            document.getElementById("message").value,
+        }).then(
+          
+          );
+          setTimeout(() => (this.contact_message = "",this.subject="",this.email="",this.tel="",this.message=""), 1000);
+  },
 
       init() {
         this.activeImage = this.images.length > 0 ? this.images[0] : null;
@@ -204,9 +225,6 @@ document.addEventListener("alpine:init", () => {
         if (index === this.images.length - 1) index = -1;
         this.activeImage = this.images[index + 1];
       },
-
-
-
 
       imageShareholderhomepage: [
         {
@@ -437,8 +455,6 @@ document.addEventListener("alpine:init", () => {
         this.currentIndexdiferent1 =
           (this.currentIndexdiferent1 + 1) % this.imagesDifferent1.length;
       },
-
-  
 
       // get all price plans ends here
     };
