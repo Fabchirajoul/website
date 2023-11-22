@@ -90,10 +90,10 @@
         <!-- home page  -->
         <section>
             <div class="row">
-                <div class="col-md-12" x-show="homapage">
-                    <div col-md-12>
+                <div class="l12 m12 s12" x-show="homapage">
+                    <div class="l12 m12 s12" >
                         <template x-for="image in images">
-                            <img x-show="activeImage===image" :src="image" alt="" class="link-secondary me-12" />
+                            <img class="homeImage" x-show="activeImage===image" :src="image" alt="" />
                         </template>
 
                         <div>
