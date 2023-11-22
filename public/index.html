@@ -33,65 +33,65 @@
     </style>
 </head>
 
-<body  class="container">
-    <main  class="card"  x-data="CAPSTONEWIDGET" x-cloak>
+<body class="container">
+    <main class="card" x-data="CAPSTONEWIDGET" x-cloak>
         <section>
 
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-black">
+            <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-black">
 
-            <div class="container">
-                <a class="navbar-brand mt-2 mt-lg-0" href="/"> GLOBAL CARGO LOGISTICS
-                </a>
-                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
-                    data-mdb-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <i class="fas fa-bars"></i>
-                </button>
+                <div class="container">
+                    <a class="navbar-brand mt-2 mt-lg-0" href="/"> GLOBAL CARGO LOGISTICS
+                    </a>
+                    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                        data-mdb-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
 
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo02" x-cloak>
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo02" x-cloak>
 
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
-                        <li class="nav-item">
-                            <a class="link-secondary me-3" x-on:click="openHome('homepage')" href="#">HOME</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="link-secondary me-3" x-on:click="openHome('homepage')" href="#">HOME</a>
+                            </li>
 
-                        <li class="nav-item">
-                            <a class="link-secondary me-3" x-on:click="openHome('about')" href="#">ABOUT</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="link-secondary me-3" x-on:click="openHome('about')" href="#">ABOUT</a>
+                            </li>
 
 
-                        <li class="nav-item">
-                            <a class="link-secondary me-3" x-on:click="openHome('why_us')" href="#">WHY US</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="link-secondary me-3" x-on:click="openHome('contact_us')" href="#">CONTACT</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="link-secondary me-3" x-on:click="openHome('faq')" href="#">FAQ</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="link-secondary me-3" x-on:click="openHome('why_us')" href="#">WHY US</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="link-secondary me-3" x-on:click="openHome('contact_us')" href="#">CONTACT</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="link-secondary me-3" x-on:click="openHome('faq')" href="#">FAQ</a>
+                            </li>
 
-                        <li class="nav-item">
-                            <a class="link-secondary me-3" x-on:click="openHome('our_services')" href="#">OUR
-                                SERVICES</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="link-secondary me-3" x-on:click="openHome('tracking')" href="#">TRACKING</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="link-secondary me-3" x-on:click="openHome('our_services')" href="#">OUR
+                                    SERVICES</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="link-secondary me-3" x-on:click="openHome('tracking')" href="#">TRACKING</a>
+                            </li>
 
-                    </ul>
+                        </ul>
 
+                    </div>
                 </div>
-            </div>
 
-        </nav>
-        <br><br><br>
+            </nav>
+            <br><br><br>
         </section>
         <!-- home page  -->
         <section>
             <div class="row">
                 <div class="l12 m12 s12" x-show="homapage">
-                    <div class="l12 m12 s12" >
+                    <div class="l12 m12 s12">
                         <template x-for="image in images">
                             <img class="homeImage" x-show="activeImage===image" :src="image" alt="" />
                         </template>
@@ -134,19 +134,423 @@
                     </p>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-5">
                     <h3>OUR SERVICES</h3>
                     <p style="text-align:justify"></p>
-                    <a href="#" x-on:click="openHome('our_services')" x-text="imageShareholderhomepage[currentIndex].title"></a>
+                    <a href="#" x-on:click="openHome('our_services')"
+                        x-text="imageShareholderhomepage[currentIndex].title"></a>
                     <p x-on:click="openHome('our_services')" x-text="imageShareholderhomepage[currentIndex].text">
                     <p>
                         <br>
                         <!-- <template x-for="image in images"> -->
-                        <img :src="imageShareholderhomepage[currentIndex].image" alt="Current Image for our Services" width="100%">
+                        <img :src="imageShareholderhomepage[currentIndex].image" alt="Current Image for our Services"
+                            class="hompage2Image">
                         <!-- </template> -->
+                </div><br>
+                <div class="col-md-4">
+                    <img src="images/homepage2/1.jpg" class="hompage2Image"><br><br>
+                    <p class="why_us"> INTERNATIONAL PET TRANSPORT</p>
+                    <p>
+                        Global Cargo Logistics manages every aspect of international pet travel, including arranging
+                        your pet’s
+                        flights and providing travel crates. We will guide you through your specific country
+                        requirements
+                        and we will provide you with detailed veterinary time schedules.
+
+                        <a class="why_us" style="text-align: center;" href="#"
+                            x-on:click="openHome('INTERNATIONAL')">READ MORE</a>
+                    </p>
+
+
+                </div>
+                <div class="col-md-4">
+                    <img src="images/homepage2/2.jpg" class="hompage2Image"><br><br>
+                    <p class="why_us"> LOCAL PET TRANSPORT</p>
+                    <p>
+                        Global Cargo Logistics, pet courier service in South Africa, will arrange for your pet’s
+                        domestic flight and provide you with the airline approved pet travel crates.
+                        Our fleet of pet courier vehicles is fully insured, branded and air-conditioned.
+                        <a class="why_us" style="text-align: center;" href="#" x-on:click="openHome('LOCAL')">READ
+                            MORE</a>
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <img src="images/homepage2/3.jpg" class="hompage2Image"><br><br>
+                    <p class="why_us"> IMPORT SERVICES</p>
+                    <p>
+                        Global Cargo Logistics offers import services for pets travelling to every country in the world
+                        and road transport
+                        to neighbouring countries. We can arrange your animal travel - onward flights to other
+                        destinations as well as offer transit services.
+                        <a class="why_us" style="text-align: center;" href="#" x-on:click="openHome('IMPORT')">READ
+                            MORE</a>
+                    </p>
+
+                </div>
+                <div class="col-md-12">
+
+                    <p class="why_us" style="text-align: center;"> WE TAKE CARE OF THE ENTIRE PET TRAVEL PROCESS AND
+                        YOUR PET RELOCTION ARRANGEMENTS</p>
+
+
+                    <p><img src="images/about.JPG">We will guide you through complicated country requirements for the
+                        pet travel</p>
+                    <p><img src="images/about.JPG">We will quote you on pet friendly airlines and guide you through
+                        their animal transport restrictions</p>
+                    <p><img src="images/about.JPG">We will check your pet’s travel paperwork and provide detailed
+                        veterinary time schedules</p>
+                    <p><img src="images/about.JPG">We will book your pet’s flight and provide you with the airline
+                        approved pet travel crates</p>
+
+                    <p><img src="images/about.JPG">
+                        We will transport your pets in our branded and air-conditioned vehicles</p>
+                    <p><img src="images/about.JPG">We will communicate with you regularly on the status of your pets
+                        while in transit or in our kennels</p>
+                    <p><img src="images/about.JPG">Additionally we provide Traveller Comfort Pack & Pet Protection Plan
+                        to ease the journey of your pets</p>
+                </div>
+                <div>
+                    <img src="images/homepage2/4.jpg" class="homeImage" />
                 </div>
             </div>
 
+        </section>
+
+        <!-- international  -->
+        <section>
+            <div class="row" x-show="INTERNATIONAL">
+                <div class="col-md-4">
+                    <h5>PET SERVICES</h5>
+                    <hr>
+                    <a class="link-secondary me-3" x-on:click="openHome('homepage')" href="#">HOME</a><br>
+                    <hr>
+                    <a class="link-secondary me-3" x-on:click="openHome('why_us')" href="#">WHY US</a><br>
+                    <hr>
+                    <a class="link-secondary me-3" x-on:click="openHome('shareholders')" href="#">BRANCH
+                        MANAGERS</a><br>
+                    <hr>
+
+
+
+                </div>
+                <div class="col-md-8">
+                    <p class="why_us">INTERNATIONAL PET DELIVERY</p>
+                    <p>
+                        <b>International pet travel</b> is vastly different to human travel. There are country
+                        regulations,
+                        airline stipulations, and veterinary requirements that have to be considered and adhered to
+                        before
+                        travel arrangements can be made for your pets. <br><br>
+
+                        Global Cargo Logistics will provide you with professional and up-to-date international pet
+                        transport
+                        guidance and expertise concerning your destination country’s specific requirements and your
+                        pet’s veterinary preparations. We will happily shoulder all the anxieties you may have to
+                        safely and ethically reunite your family in your new home. <br>
+
+                    <p class="why_us">We would strongly recommend, that the very first thing you do is to acquaint
+                        yourself with these few important points:</p>
+
+                    </p>
+                    <p><img src="images/icon.JPG">
+                        Understand your pet’s travel requirements with your consultant’s guidance.</p>
+                    <p><img src="images/icon.JPG">Obtain, receive and accept our quote.</p>
+                    <p><img src="images/icon.JPG">Adhere to your pet’s veterinary schedules and timelines provided by
+                        your consultant (unless we are assigned to do it all for you).</p>
+
+                    <p class="why_us"> You do better when you know better…. Read the below points to Know Better.</p>
+
+                    <h5>Understanding your international pet travel quotation.</h5>
+
+                    <p>Overseas pet travel and animal relocation is often far more expensive than human travel.</p>
+                    <p>Airfreight is calculated on how much space your pet’s travel crate occupies in the airline’s
+                        cargo hold. Unfortunately, these prices are never discounted by the airlines. Veterinary fees,
+                        airline fuel fees, administration fees, crate charges, and additional customs or state vet
+                        endorsements have to be taken into consideration.
+
+                    </p>
+                    <p>We will tailor your quote to suit your needs and requirements. However, if you find that the
+                        quote is above your budget please let us know, and perhaps we can advise you on how to reduce
+                        costs
+
+                    </p>
+
+                    <p class="why_us">Working with a vet.</p>
+                    <p>Indicated below are a few mistakes that vets can make. Please, if you are working with your vet
+                        make sure he/she is aware of the following:
+
+                    </p>
+                    <p><img src="images/icon.JPG">Microchips cannot be inserted after the rabies vaccination, unless it
+                        is done on the same day.</p>
+                    <p><img src="images/icon.JPG">Do not draw blood for the TITRE rabies blood test less than 30 days
+                        after the last rabies vaccination.</p>
+
+                    <p class="why_us">Applying for an import permit</p>
+                    <p>An import permit is required for most African, South American & Asian countries. Australia & New
+                        Zealand also require an import permit. Countries like The USA, Canada, and most EU countries do
+                        not require an import permit.
+
+                        <br><br>So, if your destination country requires an import permit please see the notes below:
+                    </p>
+                    <p><img src="images/icon.JPG">Import permits have to be obtained from the country of destination.
+                    </p>
+                    <p><img src="images/icon.JPG">
+                        Import permits need to be applied for far in advance of your pets’ date of departure. It can
+                        take several weeks to obtain the permit. It depends on the issuing country..</p>
+                    <p><img src="images/icon.JPG">Every import permit is valid for a certain period of time. This means
+                        that your pet will have to travel before the expiry date on the permit.</p>
+                    <p><img src="images/icon.JPG">Every import permit will specify the countries requirements. Read
+                        those requirements. This is very important! You have to comply with the countries requirements
+                        before your pet’s can travel.</p>
+                    <p><img src="images/icon.JPG">Import permits are valid for one assignment only. This means that
+                        every time your pet travels you need to obtain a new import permit from the country of
+                        destination.</p>
+                    <p><img src="images/icon.JPG">
+                        Sometimes cats and dogs have to travel on separate permits and health certificates.</p>
+                    <p><img src="images/icon.JPG">Generally pets can travel on a copy of the permit as long as the
+                        original permit is submitted upon the pet’s arrival.</p>
+
+
+                    <p class="why_us">Departure day.</p>
+                    <p><img src="images/icon.JPG">Our Animal Handler will collect your pets from your residence on the
+                        day of their departure (unless kennelling is required prior to travel)..</p>
+                    <p><img src="images/icon.JPG">Do not feed your animals a large meal on the day of departure; a small
+                        snack or treat is more suitable. This is because they will be in their travel crate for an
+                        extended period and will need to relieve themselves at some point. The larger the meal the
+                        greater the chance that your pet will soil their travel crate, this could lead to a very messy
+                        dog and travel crate. Alternatively your pet may feel constipated and if they have been fed a
+                        large meal this could lead to some discomfort. So please feed them well the night before
+                        collection and give your dog a long walk to have enough time for a toilet break before our
+                        scheduled collection time.</p>
+                    <p><img src="images/icon.JPG">We all know how intuitive cats can be and they are famous for doing a
+                        disappearing act on the day of collection or even the evening before, so please keep your cats
+                        securely closed in a room from the evening before scheduled collection so there are no last
+                        minute surprises.</p>
+                    <p><img src="images/icon.JPG">Please note that your pets have to travel with their original
+                        documentation attached to their travel crate.</p>
+                    <p><img src="images/icon.JPG">Your pets must be booked in, at the airlines, several hours (generally
+                        4 hours) before their time of departure. Our Animal Handler will walk your dog, to let them
+                        refresh themselves, just prior to the handover to the airline. Our Animal Handler will also
+                        inform you once your pets have been booked in for their flight..</p>
+                    <p><img src="images/icon.JPG">You will be provided with a track and trace website link to check on
+                        your pet’s flight status anytime during its journey.</p>
+                    <p><img src="images/icon.JPG">
+                        In the case of an emergency we have a 24 hours manned phone line, please find the emergency
+                        phone numbers in your consultant’s email stationary.</p>
+                    <p><img src="images/icon.JPG">Your consultant will follow up with you upon your pet’s arrival and
+                        again a few days later to check how your furry friend is settling into its new environment..</p>
+
+                    <p class="why_us">Arrival at destination..</p>
+                    <p>You can either clear your pets through customs & collect them from the airport yourself OR we can
+                        arrange it all and have them delivered to your residence.
+                        <br><br>
+                        Please read further info on both choices below:
+                    </p>
+
+                    <p class="why_us">Owner clearing and collecting pets themselves after arrival:</p>
+                    <p><img src="images/icon.JPG">The consignee (person collecting the pet) needs to have their ID or
+                        passport with them when collecting.</p>
+                    <p><img src="images/icon.JPG">At the destination airport the consignee must go to the airline cargo
+                        section at least 40 minutes to an hour after the flight has arrived, show the person at the
+                        counter the Air Waybill number that will be supplied, their ID or passport and request their
+                        pets’ original documentation..</p>
+                    <p><img src="images/icon.JPG">Then the consignee must go to the customs office with the
+                        documentation and obtain customs clearance (you might be expected to pay additional customs
+                        fees)..</p>
+                    <p><img src="images/icon.JPG">Once the customs official has stamped the appropriate forms, the
+                        consignee must go back to the cargo section, show them the stamped customs forms, pay additional
+                        airline handling charges and collect their pets.</p>
+                    <p><img src="images/icon.JPG">This process might be time consuming but should be pretty simple.</p>
+                    <p><img src="images/icon.JPG">Very important: should you be clearing and collecting your pet
+                        yourself, please ensure that you contact the cargo section at the airport prior to your pet’s
+                        arrival. Please ensure that you are aware of the customs requirements and procedures at the
+                        airport where your pet is arriving as we cannot supply you with this information..</p>
+
+                    <br><br>
+                    <p class="why_us">Owner clearing and collecting pets themselves after arrival:</p>
+
+                    <p><img src="images/icon.JPG">Prior to travel your destination travel agent might need information
+                        and documentation from you, the owner, i.e. passport copy, visa copy, customs forms that needs
+                        to be completed etc.</p>
+                    <p><img src="images/icon.JPG">The destination agent will take care of customs clearance, payment of
+                        the airline handling charges and any other import formalities that might need to be done.</p>
+                    <p><img src="images/icon.JPG">After clearance the travel agent could either hand the pet over to you
+                        at the airport or deliver to a residence.</p>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Local  -->
+
+        <section>
+            <div class="row" x-show="LOCAL">
+                <div class="col-md-4">
+                    <h5>PET SERVICES</h5>
+                    <hr>
+                    <a class="link-secondary me-3" x-on:click="openHome('homepage')" href="#">HOME</a><br>
+                    <hr>
+                    <a class="link-secondary me-3" x-on:click="openHome('why_us')" href="#">WHY US</a><br>
+                    <hr>
+                    <a class="link-secondary me-3" x-on:click="openHome('shareholders')" href="#">BRANCH
+                        MANAGERS</a><br>
+                    <hr>
+
+
+
+                </div>
+                <div class="col-md-8">
+                    <p class="why_us">LOCAL PET DELIVERY</p>
+                    <p>
+                        Global Cargo Logistics Domestic Pet Travel Service can fly your pets to all major airports or
+                        safely transport them by road if there is no airport at your destination. <br><br>
+                    <p class="why_us">Adhering to veterinarian travel requirements.</p>
+
+                    <p>Adhere to your pet’s veterinary schedules and timelines provided by your consultant (unless we
+                        are assigned to do it all for you).</p>
+
+                    <p> Domestic airlines request that your dog & cat has an up to date rabies vaccination. This mean
+                        rabies vaccination has to be older than 14 days and younger than 1 year</p>
+
+                    <p class="why_us">Understanding your domestic pet travel quotation.</p>
+
+                    <p>Overseas pet travel and animal relocation is often far more expensive than human travel.</p>
+                    <p>Airfreight is calculated on how much space your pet’s travel crate occupies in the airline’s
+                        cargo hold and unfortunately these prices are never discounted by the airlines. Airline fuel
+                        fees, administration fees, crate charges and additional kennelling (if required) have to be
+                        taken into consideration.</p>
+                    </p>
+                    <p>We will tailor your quote to suit your needs and requirements. However, if you find that the
+                        quote is above your budget please let us know, and perhaps we can advise you on how to reduce
+                        costs
+
+                    <p class="why_us">Accepting our quote for your pet’s travel services.</p>
+                    <p>Please let us know that you are accepting our quote so our Admin department can supply you with
+                        your invoice.
+
+                        You can either pay the required non-refundable deposit or the full amount.
+
+                        Once your payment reflects in our account, your file will be allocated to your dedicated
+                        consultant.</p>>
+
+
+                    <p class="why_us">Working with your dedicated consultant.</p>
+                    <p>Your dedicated consultant will contact you to establish a relationship with you and your pets and
+                        at the same time collect all the travel information specific to your pet travel relocation
+                        needs.
+                        You will be asked to send us copies of your pets’ veterinary documentation so your consultant
+                        can establish your travel preparedness and advise accordingly.
+
+                        You will be asked to complete our Required Information Sheet with your contact details,
+                        collection / delivery addresses and your pet’s measurements and weight. It is important that you
+                        do this immediately, because if there is anything wrong with your paperwork, your consultant
+                        will be able to pick this up and guide you accordingly.
+                    </p>
+
+                    <p class="why_us">Supplying wooden travel box or plastic crate.</p>
+                    <p>We run a loan travel box system between our branches</p>
+                    <p>Our manufacturing team will build your pet’s wooden IATA approved travel crate to the highest
+                        safety and durability standards. We can also supply you with a top quality plastic VARI-KENNEL.
+                    <p>If you purchased the Traveller Comfort Pack then we will bring the travel kennel to your house
+                        two weeks in advance. If not, we will bring the travel crate with us to your residence when we
+                        collect your pets on the day of their departure.
+
+                    </p>
+                    <p>Your pet’s travel crate will contain two water bowls, absorbent water pad, labels and airline
+                        stickers. If you purchased the Traveller Comfort Pack we will supply superior quality
+
+                    </p>
+
+
+
+                    <p class="why_us">Suppling own pet’s travel crate.</p>
+                    <p>If you are supplying your own travel crate please send us a picture so we can check that it
+                        complies with airline requirements to avoid any last minute delays. We also recommend that as
+                        far in advance as possible you make sure to clean your pet’s crate, assemble the pieces together
+                        and check door’s mechanism. This will prevent last minute surprises.
+
+                        You should also provide a water bowl and a blanket.
+                    </p>
+
+                    <p class="why_us">Booking your pet’s flight.</p>
+                    <p>We can fly your pets to all the major airports or even transport them by road if there is no
+                        airport at your destination.
+
+                        Your consultant will send you your pet’s flight itinerary along with their ticket number (Air
+                        Waybill Number – AWB).
+                    </p>>
+
+                    <p class="why_us">Ordering a Traveller Comfort Pack.</p>
+                    <p>We offer this special package to ease your precious pets travel experience. We would deliver it
+                        to your residence weeks before your pet’s departure.
+                        <br>
+                    <p>The Traveller Comfort Pack includes:</p>
+                    </p>
+                    <p><img src="images/icon.JPG">We will deliver your pet travel box a few weeks before its departure
+                        date. That way, your pet can get familiar with the smell of the travel crate and perhaps you can
+                        also start Crate Training.
+                    </p>
+                    <p><img src="images/icon.JPG">We will supply you with a Calming Collar for dogs. This pheromone
+                        collar mimics the pheromone that the mother produces to calm and reassure her babies. It mimics
+                        the natural way to help them cope with new and fearful situations. It can work for up to 30
+                        days!
+                    </p>
+                    <p><img src="images/icon.JPG">We will supply you with a Calming Paste for cats. This product
+                        promotes relaxation and it is often used in stressful situations because it relieves the anxiety
+                        that is caused as a result of separation, boarding in a cattery and fear of travel
+                    </p>
+                    <p><img src="images/icon.JPG">We designed and we manufacture our own Pet Travel Bedding for the
+                        comfort of your pet while in transit.</p>
+
+                    <p class="why_us">Departure day process.</p>
+                    <p><img src="images/icon.JPG">Our Animal Handler will collect your pets from your residence on the
+                        day of their departure (unless kennelling is required prior to travel)..</p>
+                    <p><img src="images/icon.JPG">Do not feed your animals a large meal on the day of departure; a small
+                        snack or treat is more suitable. This is because they will be in their travel crate for an
+                        extended period and will need to toilet at some point. A large meal equals a large toilet and
+                        this can lead to a very messy dog and travel crate. Alternatively your pet may constipate and if
+                        they have been fed a large meal this could lead to some discomfort. So please feed them well the
+                        night before and give your dog a long walk before our collection.
+                    </p>
+                    <p><img src="images/icon.JPG">We all know how intuitive cats can be and they are famous for doing a
+                        disappearing act on the day of collection or even the evening before, so please keep your cats
+                        securely closed in a room from the evening before scheduled collection so there are no last
+                        minute surprises.
+                    </p>
+                    <p><img src="images/icon.JPG">Your pets must be booked in, at the airlines, several hours (generally
+                        2 hours) before their time of departure. Our Animal Handler will inform you once your pets have
+                        been booked in for their flight.
+                    </p>
+                    <p><img src="images/icon.JPG">Your consultant will follow up with you upon your pet’s arrival and
+                        again a few days later to check how your furry friend is settling into its new environment.
+                    </p>
+
+                    <p class="why_us">Arrival at destination.</p>
+                    <p>You can either collect your pets from the airport yourself OR we can arrange it all and have them
+                        delivered to your residence. Please read further info on both choices below:
+
+                    </p>
+
+
+                    <p class="why_us">Departure day steps.</p>
+                    <p>You can either collect your pets from the airport yourself OR we can arrange it all and have them
+                        delivered to your residence. Please read further info on both choices below:
+
+                    </p>
+                    <p class="why_us">Owner collecting pets themselves after arrival:</p>
+                    <p>At least 20 minutes to an hour after the flight has arrived, the consignee (person collecting the
+                        pet) must go to the airline cargo section at the destination airport and show the person at the
+                        counter the Air Waybill number and their ID or passport.
+
+                    </p>
+                    <br>
+                    <p class="why_us">partnered travel agency clearing and collecting the pets after arrival:</p>
+                    <p>Our Animal Handler will collect your pet from the airline and he will clean its travel crate if
+                        necessary. They will then contact you to let you know time of arrival at your residence.</p>
+
+
+                </div>
+            </div>
         </section>
 
         <!-- about us  -->
@@ -366,33 +770,48 @@
 
                         <img src="images/customers/ourevolution.jpg" alt="" width="100%"
                             class="link-secondary me-3"><br>
-                            
+
 
 
                     </div>
 
 
                     <div class="col-md-6">
-                        <p>	
-                            In 1983, Global Cargo Logistics was established with the purpose of providing a low-cost courier service between Napier and Hastings in New Zealand. A year later, Fastway became the first-ever transport company to enter the franchising arena. 
+                        <p>
+                            In 1983, Global Cargo Logistics was established with the purpose of providing a low-cost
+                            courier service between Napier and Hastings in New Zealand. A year later, Fastway became the
+                            first-ever transport company to enter the franchising arena.
                         </p>
-                        <p>In 1993 it was decided to export the business concept to Australia, following a year of research which showed that the same niche market the company had ridden to success in New Zealand, also existed across the Tasman.
+                        <p>In 1993 it was decided to export the business concept to Australia, following a year of
+                            research which showed that the same niche market the company had ridden to success in New
+                            Zealand, also existed across the Tasman.
                         </p>
                         <br>
 
-                        <p>	
-                            After commencing operations in Australia in 1993, Global Cargo Logistics enjoyed phenomenal growth and was announced as the country’s fastest-growing private company in 1998 by BRW Magazine with the growth of 14,557% for the previous five years. The success of Fastway in Australia was immediate, and the upwards growth trend continues to this day. </p>
-                        <p>Global Cargo Logistics later embarked on an expansion program, offering a National Master Franchise to suitable candidates, to operate the Fastway business for an entire country.</p>
+                        <p>
+                            After commencing operations in Australia in 1993, Global Cargo Logistics enjoyed phenomenal
+                            growth and was announced as the country’s fastest-growing private company in 1998 by BRW
+                            Magazine with the growth of 14,557% for the previous five years. The success of Fastway in
+                            Australia was immediate, and the upwards growth trend continues to this day. </p>
+                        <p>Global Cargo Logistics later embarked on an expansion program, offering a National Master
+                            Franchise to suitable candidates, to operate the Fastway business for an entire country.</p>
                         <br>
 
-                        <p>	
-                            GLobal Cargo Logistics commenced operation in South Africa in 2008 and now has 15 regional franchises across the country.</p>
-                            
-                            <p>In 2011, the  Global Cargo Logistics brand began a major revitalisation; an exciting change to the way we look and a renewed focus on our valued customers. Underpinning that is our key value system of delighting the customer at every point in the parcel’s journey. And in 2014 Fastway completed the brand refresh in South Africa.</p> <br>
+                        <p>
+                            GLobal Cargo Logistics commenced operation in South Africa in 2008 and now has 15 regional
+                            franchises across the country.</p>
 
-                       <p>Our new look is designed to reflect our growth, progression and of course, our overwhelming ambition to be one of the leading courier companies in operation today.</p>
-                    <br>
-                    <p>Today, we’re proud to be able to offer a low cost, quality courier service to customers, large and small across South Africa, Australia, New Zealand, Ireland and Northern Ireland.</p>
+                        <p>In 2011, the Global Cargo Logistics brand began a major revitalisation; an exciting change to
+                            the way we look and a renewed focus on our valued customers. Underpinning that is our key
+                            value system of delighting the customer at every point in the parcel’s journey. And in 2014
+                            Fastway completed the brand refresh in South Africa.</p> <br>
+
+                        <p>Our new look is designed to reflect our growth, progression and of course, our overwhelming
+                            ambition to be one of the leading courier companies in operation today.</p>
+                        <br>
+                        <p>Today, we’re proud to be able to offer a low cost, quality courier service to customers,
+                            large and small across South Africa, Australia, New Zealand, Ireland and Northern Ireland.
+                        </p>
                     </div>
 
 
@@ -437,9 +856,9 @@
 
                         <img src="images/evolution/boplaas-logo_our-customers.jpg" alt="" width="100%"
                             class="link-secondary me-3"><br><br><br><br><br><br><br><br><br><br><br>
-                            <img src="images/evolution/testimonial_estelle.jpg" alt="" width="100%"
+                        <img src="images/evolution/testimonial_estelle.jpg" alt="" width="100%"
                             class="link-secondary me-3"><br><br><br><br><br><br><br><br><br><br>
-                            <img src="images/evolution/wantitall-logo.png" alt="" width="100%"
+                        <img src="images/evolution/wantitall-logo.png" alt="" width="100%"
                             class="link-secondary me-3"><br><br><br><br><br><br>
                     </div>
                     <br>
@@ -448,28 +867,47 @@
                         <p class="why_us">Boplaas
                         </p>
                         <p>Fast, courteous, and professional at all times.</p>
-                        <p>We’ve been using your company for a few months now and we are very satisfied with the great friendly service. It doesn’t matter when I call in to get a pickup I always get a friendly voice and they always at least act as they know me and welcome my call.</p>
-                            <p>We have been completely satisfied with their rates, high levels of service and support, and would recommend Fastway Couriers South Africa to any business looking to partner with a professional courier company.</p>
-                            <p class="why_us">Karen Terblanche</p>
+                        <p>We’ve been using your company for a few months now and we are very satisfied with the great
+                            friendly service. It doesn’t matter when I call in to get a pickup I always get a friendly
+                            voice and they always at least act as they know me and welcome my call.</p>
+                        <p>We have been completely satisfied with their rates, high levels of service and support, and
+                            would recommend Fastway Couriers South Africa to any business looking to partner with a
+                            professional courier company.</p>
+                        <p class="why_us">Karen Terblanche</p>
                         <hr><br>
 
                         <p class="why_us">Wantitall
                         </p>
-                        <p>We are pleased to recommend the services of Fastway Couriers South Africa as a courier partner. Wantitall Pty Ltd has been using Fastway Couriers South Africa since 2008. Due to the nature of our business, it's of the utmost importance that we choose the right courier to partner with, they have ensured that delivery of our customers' orders has been on time and of the highest quality on arrival.</p>
-                        <p>We’ve been using your company for a few months now and we are very satisfied with the great friendly service. It doesn’t matter when I call in to get a pickup I always get a friendly voice and they always at least act as they know me and welcome my call.</p>
-                            <p>We really appreciate the wonderful service you have given our company.</p>
-                            <p class="why_us">Terence Murphy</p>
+                        <p>We are pleased to recommend the services of Fastway Couriers South Africa as a courier
+                            partner. Wantitall Pty Ltd has been using Fastway Couriers South Africa since 2008. Due to
+                            the nature of our business, it's of the utmost importance that we choose the right courier
+                            to partner with, they have ensured that delivery of our customers' orders has been on time
+                            and of the highest quality on arrival.</p>
+                        <p>We’ve been using your company for a few months now and we are very satisfied with the great
+                            friendly service. It doesn’t matter when I call in to get a pickup I always get a friendly
+                            voice and they always at least act as they know me and welcome my call.</p>
+                        <p>We really appreciate the wonderful service you have given our company.</p>
+                        <p class="why_us">Terence Murphy</p>
                         <hr><br>
 
                         <p class="why_us">Annique
                         </p>
-                        <p>Phillip is like a family member, he even greets and waves when we run into each other at other places in Northcliff. He delivers to another lady in my street too and he is always friendly and happy. He is clearly very proud of his work and the company he works for. He makes a plan to leave my parcel with next door neighbours when I am not at home, or he phones and confirms what time I will be home. He takes ownership of every parcel and ensures a perfect delivery every time! I go running/walking two times a week with a group of friends, and sometimes Phillip crosses our path. He will stop and confirm at what time I will be home to deliver the parcel.</p>
-                        <p>We’ve been using your company for a few months now and we are very satisfied with the great friendly service. It doesn’t matter when I call in to get a pickup I always get a friendly voice and they always at least act as they know me and welcome my call.</p>
-                            <p>Now that is what I call personal service.</p>
-                            <p class="why_us">Estelle de Kock in Northcliff</p>
+                        <p>Phillip is like a family member, he even greets and waves when we run into each other at
+                            other places in Northcliff. He delivers to another lady in my street too and he is always
+                            friendly and happy. He is clearly very proud of his work and the company he works for. He
+                            makes a plan to leave my parcel with next door neighbours when I am not at home, or he
+                            phones and confirms what time I will be home. He takes ownership of every parcel and ensures
+                            a perfect delivery every time! I go running/walking two times a week with a group of
+                            friends, and sometimes Phillip crosses our path. He will stop and confirm at what time I
+                            will be home to deliver the parcel.</p>
+                        <p>We’ve been using your company for a few months now and we are very satisfied with the great
+                            friendly service. It doesn’t matter when I call in to get a pickup I always get a friendly
+                            voice and they always at least act as they know me and welcome my call.</p>
+                        <p>Now that is what I call personal service.</p>
+                        <p class="why_us">Estelle de Kock in Northcliff</p>
                         <hr><br>
-                            
-                </div>
+
+                    </div>
 
 
                 </div>
@@ -502,44 +940,48 @@
 
                         <img :src="imageWhyUs[currentIndex].image" alt="Current Image" width="100%"
                             class="link-secondary me-5"><br>
-                            <span x-text="imageWhyUs[currentIndex].text2" class="link-secondary me-3"></span><br>
+                        <span x-text="imageWhyUs[currentIndex].text2" class="link-secondary me-3"></span><br>
                         <span class="why_us" x-text="imageWhyUs[currentIndex].text2"
                             class="link-secondary me-3"></span><br>
-                        
+
                         <hr>
 
                     </div>
 
                     <div class="col-md-1">
 
-                       <template x-for="(image, currentIndexdiferent) in imagesDifferent" :key="currentIndexdiferent">
-                        <img :src="imagesDifferent[currentIndexdiferent]" alt="Current Image" width="100%"
-                        class="link-secondary me-1">
-                       
-                       </template>
+                        <template x-for="(image, currentIndexdiferent) in imagesDifferent" :key="currentIndexdiferent">
+                            <img :src="imagesDifferent[currentIndexdiferent]" alt="Current Image" width="100%"
+                                class="link-secondary me-1">
+
+                        </template>
                     </div>
                     <br>
 
                     <div class="col-md-3">
                         <template x-for="(text, currentIndexdiferentText) in textsDifferent">
-                            <p><span class="why_us" x-text="textsDifferent[currentIndexdiferentText].text1"></span ><br><span x-text="textsDifferent[currentIndexdiferentText].text2"></span></p>
-                        </template>      
-                </div>
+                            <p><span class="why_us"
+                                    x-text="textsDifferent[currentIndexdiferentText].text1"></span><br><span
+                                    x-text="textsDifferent[currentIndexdiferentText].text2"></span></p>
+                        </template>
+                    </div>
 
-                <div class="col-md-1" >
+                    <div class="col-md-1">
 
-                    <template x-for="(image, currentIndexdiferent1) in imagesDifferent1" :key="currentIndexdiferent1">
-                     <p><img :src="image" alt="Current Image" width="100%"
-                        class="image-container img"></p>
-                    </template>
-                 </div>
-                <br>
+                        <template x-for="(image, currentIndexdiferent1) in imagesDifferent1"
+                            :key="currentIndexdiferent1">
+                            <p><img :src="image" alt="Current Image" width="100%" class="image-container img"></p>
+                        </template>
+                    </div>
+                    <br>
 
-                <div class="col-md-4">
-                    <template x-for="(text, currentIndexdiferentText1) in textsDifferent1">
-                        <p><span class="why_us" x-text="textsDifferent1[currentIndexdiferentText1].text3"></span ><br><span x-text="textsDifferent1[currentIndexdiferentText1].text4"></span></p>
-                    </template>     
-            </div>
+                    <div class="col-md-4">
+                        <template x-for="(text, currentIndexdiferentText1) in textsDifferent1">
+                            <p><span class="why_us"
+                                    x-text="textsDifferent1[currentIndexdiferentText1].text3"></span><br><span
+                                    x-text="textsDifferent1[currentIndexdiferentText1].text4"></span></p>
+                        </template>
+                    </div>
 
 
                 </div>
@@ -552,7 +994,7 @@
             <div class="row" x-show="contact_us" x-cloak>
                 <!-- Fabchi -->
                 <div class="col-md-3">
-                    
+
                     <h5>CONTACT US</h5>
                     <hr>
                     <a class="link-secondary me-3" x-on:click="openHome('homepage')" href="#">HOME</a><br>
@@ -566,67 +1008,72 @@
                     <div class="social-media">
                         <p>Connect with us :</p>
                         <div class="social-icons">
-                          <a href="#">
-                            <i class="fab fa-facebook-f"></i>
-                          </a>
-                          <a href="#">
-                            <i class="fab fa-twitter"></i>
-                          </a>
-                          <a href="#">
-                            <i class="fab fa-instagram"></i>
-                          </a>
-                          <a href="#">
-                            <i class="fab fa-linkedin-in"></i>
-                          </a>
+                            <a href="#">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
                         </div>
-                      </div>
+                    </div>
                 </div>
                 <div class="col-md-9">
-                    <div >
-                        
-                       
-                        <div class="form">
-                          <div class="contact-info">
-                            <h3 class="title">Our Hub Locations</h3>
-                            <iframe frameborder=0 style='width:100%;height:500px;' src='//www.zeemaps.com/pub?group=4848734'> </iframe>
-                  
-                           
-                  
-                            
-                          </div>
-                  
-                          <div class="contact-form">
-                            <span class="circle one"></span>
-                            <span class="circle two"></span>
-                  
-                            <form onsubmit="sendEmail(); reset(); return false;">
-                              <h3 class="title">Contact us</h3>
-                              <div class="input-container">
-                                <input type="text" name="subject" id="subject" class="input" placeholder="Subject" required/>
-                              </div>
-                              <div class="input-container">
-                                <input type="email" name="email" id="email" class="input" placeholder="Email" required/>
-                                
-                              </div>
+                    <div>
 
-                              <div class="input-container">
-                                <input type="text" name="country" id="country" class="input" placeholder="Your Country" required/>
-                                
-                              </div>
-                              <div class="input-container">
-                                <input type="number" name="phone" min="10"  id="tel" class="input" placeholder="Telephone" required/>
-                                
-                              </div>
-                              <div class="input-container textarea">
-                                <textarea name="message" id="message" class="input"></textarea>
-                              </div>
-                              <input type="submit" value="Send Message" class="btn" />
-                            </form>
-                          </div>
+
+                        <div class="form">
+                            <div class="contact-info">
+                                <h3 class="title">Our Hub Locations</h3>
+                                <iframe frameborder=0 style='width:100%;height:500px;'
+                                    src='//www.zeemaps.com/pub?group=4848734'> </iframe>
+
+
+
+
+                            </div>
+
+                            <div class="contact-form">
+                                <span class="circle one"></span>
+                                <span class="circle two"></span>
+
+                                <form onsubmit="sendEmail(); reset(); return false;">
+                                    <h3 class="title">Contact us</h3>
+                                    <div class="input-container">
+                                        <input type="text" name="subject" id="subject" class="input"
+                                            placeholder="Subject" required />
+                                    </div>
+                                    <div class="input-container">
+                                        <input type="email" name="email" id="email" class="input" placeholder="Email"
+                                            required />
+
+                                    </div>
+
+                                    <div class="input-container">
+                                        <input type="text" name="country" id="country" class="input"
+                                            placeholder="Your Country" required />
+
+                                    </div>
+                                    <div class="input-container">
+                                        <input type="number" name="phone" min="10" id="tel" class="input"
+                                            placeholder="Telephone" required />
+
+                                    </div>
+                                    <div class="input-container textarea">
+                                        <textarea name="message" id="message" class="input"></textarea>
+                                    </div>
+                                    <input type="submit" value="Send Message" class="btn" />
+                                </form>
+                            </div>
                         </div>
-                        </div>
-                      </div>
+                    </div>
                 </div>
+            </div>
             </div>
         </section>
 
@@ -646,12 +1093,12 @@
                     <div class="col-md-8">
                         <h5 class="why_us">Online Tracking</h5>
                         <hr>
-                        
+
                         <form>
                             <table>
                                 <tr>
                                     <td>
-                                        <input type="text"/>
+                                        <input type="text" />
                                     </td>
                                 </tr>
                             </table>
@@ -664,179 +1111,275 @@
         <section>
             <div class="row" x-show="faq">
                 <div class="col-md-12">
-                    <h5>FAQS</h5><hr>
+                    <h5>FAQS</h5>
+                    <hr>
                     <p class="why_us">View answers to the most commonly asked questions
                     </p>
-                   <p>Categories</p>
-                   <a href="#" @click.prevent="faq_category1=!faq_category1">Receiving parcels</a><br>
-                   <div x-show="faq_category1">
-                    <p><span class="why_us">Can I arrange a redelivery for a specific time ? </span><span> Unfortunately, due to the nature of the courier business, we can't schedule a redelivery for a specific day or time.</span></p>
-                    <p> <span class="why_us">Can I pick my parcel up from the depot? </span> Yes, please contact us first to make sure it's ready at the depot for you!</p>
-                    <p><span class="why_us">How do I arrange a redelivery ? </span><span>We know it's a pain missing your delivery, so we've got a number of easy options to get your parcel to you as quickly as possible:
-                        <br>1. Redeliver to the original address <br>We'll happily re-deliver your parcel to the original address free of charge.  You can do this by logging an online enquiry. Please note, we only offer one attempt at a re-delivery for free.
-                    <br>2.Redirect to a new address <br>You can arrange to have your parcel delivered to a new address for a small fee.  You can do this by logging an online enquiry.
-                    <br>3. Depot pick up <br>You're able to pick up your parcel directly from the depot, just make sure to contact us before you arrive to make sure your parcel is there.</span></p>
-                    <p> <span class="why_us">How do I track my parcel? </span><span>Your parcel is scanned at each stage of its journey to you. Sometimes scanning events might be delayed due to connectivity issues. <br>You're able to <a x-on:click="openHome('tracking')" href="#">track your parcel</a> on our website using your label number.</span></p>
-                    <p><span class="why_us"> In which locations do you operate? </span><span>In South Africa, Fastway has a presence in all major centres.
-                        We have Fastway depots in the following locations; Johannesburg, Pretoria, Rustenburg, Durban, Cape Town, George, Klerksdorp, Polokwane, Vaal, Bloemfontein, Witbank, Nelspruit, Harrismith (now New Castle), East London and Port Elizabeth.
-                        <br><a x-on:click="openHome('contact_us')" href="#" href="">Click here to contact your local depot.</a>
-                    <br><br>The Global Cargo Logistics brand also operates in select locations around the world, including New Zealand, Ireland, Northern Ireland and Australia.</span></p>
-                    <p><span class="why_us"> What if I'm unable to sign for the delivery? </span><span>If you're unable to sign for your parcel, we're able to leave the parcel in a secure place at your address without a signature. Before we can do this, you’ll need to complete a Authority to Leave form.  Please log an online enquiry and we'll send you the form.
-                        <br><br> 1. Why would I complete an Authority to leave form?<br>You might decide to complete an Authority to leave form if you're unable to sign for your parcel.  For example, you might be at work.
-                    <br><br>2. Who’s liable if the parcel gets lost, stolen or damaged?<br>When you complete an Authority to leave form, Fastway Global Cargo Logistics are not liable for any loss or damage to the parcel.  On the form, you should specify a secure place for your parcel to be left.
-                    <br><br>3. How do I have all my parcels delivered without a signature? <br>If you'd like all future parcels to be left without a signature, please contact your nearest depot. We'll send you the form to complete - hand it to your Courier Franchisee, or email it to your local depot.
-                <br>When you order your items online, make sure you include clear instructions to leave it without a signature.
-                </span></p>
-                    <p><span class="why_us"> What if my parcel arrives damaged?  </span><span>If your parcel arrives damaged, you should contact the sender and let them know and they’ll advise you of the next steps.</span></p>
-                    <p> <span class="why_us"> What should I do if my parcel hasn't arrived?</span><span>If your parcel hasn't arrived, firstly track your parcel on our website using your label number. This will show you where your parcel is within our network.
-                        <br><br>If you’d like additional information, please contact either the sending or receiveing branch on our website. One of our CSD agents will reach out to you. You can also contact your local courier directly. 
-                    </span></p>
-                   </div>
-                   <a href="#" @click.prevent="faq_category2=!faq_category2">Sending parcels</a><br>
-                   <div x-show="faq_category2">
-                    <p> <span class="why_us"> Are there any addresses that Globl Cargo Logistics can’t deliver to ?</span><span>
-                        Unfortunately, we’re unable to deliver to Parcel Lockers & PO Boxes.
-                    </span></p>
-                    <p><span class="why_us"> How can I become a Globl Cargo Logistics Customer?  </span><span>
-                        SEnd us an email request and we'll allocate you to a local representative. 
-                        You can also contact your local depot and they’ll get you in touch with your local Sales Representative.
-                    </span></p>
-                    <p> <span class="why_us"> Are there any items you don't carry ? </span><span>We’re unable to accept dangerous goods, as per our Conditions of carriage.
-                        <br><br>1. What are dangerous goods?<br>
-                        Dangerous goods are goods that are dangerous, flammable, explosive, volatile, offensive or are of a damaging nature in the eyes of the 
-                        Global Cargo Logistics Courier Franchisee. Usually, dangerous goods have a dangerous good label or diamond on them.<br><br>
-                        Restrictions also apply to certain types of goods we carry. These goods are specified in our <a href="/terms-and-conditions\RESUME - Fabchi RJ.pdf" target="_blank">Terms and Conditions </a> of carriage.
+                    <p>Categories</p>
+                    <a href="#" @click.prevent="faq_category1=!faq_category1">Receiving parcels</a><br>
+                    <div x-show="faq_category1">
+                        <p><span class="why_us">Can I arrange a redelivery for a specific time ? </span><span>
+                                Unfortunately, due to the nature of the courier business, we can't schedule a redelivery
+                                for a specific day or time.</span></p>
+                        <p> <span class="why_us">Can I pick my parcel up from the depot? </span> Yes, please contact us
+                            first to make sure it's ready at the depot for you!</p>
+                        <p><span class="why_us">How do I arrange a redelivery ? </span><span>We know it's a pain missing
+                                your delivery, so we've got a number of easy options to get your parcel to you as
+                                quickly as possible:
+                                <br>1. Redeliver to the original address <br>We'll happily re-deliver your parcel to the
+                                original address free of charge. You can do this by logging an online enquiry. Please
+                                note, we only offer one attempt at a re-delivery for free.
+                                <br>2.Redirect to a new address <br>You can arrange to have your parcel delivered to a
+                                new address for a small fee. You can do this by logging an online enquiry.
+                                <br>3. Depot pick up <br>You're able to pick up your parcel directly from the depot,
+                                just make sure to contact us before you arrive to make sure your parcel is there.</span>
+                        </p>
+                        <p> <span class="why_us">How do I track my parcel? </span><span>Your parcel is scanned at each
+                                stage of its journey to you. Sometimes scanning events might be delayed due to
+                                connectivity issues. <br>You're able to <a x-on:click="openHome('tracking')"
+                                    href="#">track your parcel</a> on our website using your label number.</span></p>
+                        <p><span class="why_us"> In which locations do you operate? </span><span>In South Africa,
+                                Fastway has a presence in all major centres.
+                                We have Fastway depots in the following locations; Johannesburg, Pretoria, Rustenburg,
+                                Durban, Cape Town, George, Klerksdorp, Polokwane, Vaal, Bloemfontein, Witbank,
+                                Nelspruit, Harrismith (now New Castle), East London and Port Elizabeth.
+                                <br><a x-on:click="openHome('contact_us')" href="#" href="">Click here to contact your
+                                    local depot.</a>
+                                <br><br>The Global Cargo Logistics brand also operates in select locations around the
+                                world, including New Zealand, Ireland, Northern Ireland and Australia.</span></p>
+                        <p><span class="why_us"> What if I'm unable to sign for the delivery? </span><span>If you're
+                                unable to sign for your parcel, we're able to leave the parcel in a secure place at your
+                                address without a signature. Before we can do this, you’ll need to complete a Authority
+                                to Leave form. Please log an online enquiry and we'll send you the form.
+                                <br><br> 1. Why would I complete an Authority to leave form?<br>You might decide to
+                                complete an Authority to leave form if you're unable to sign for your parcel. For
+                                example, you might be at work.
+                                <br><br>2. Who’s liable if the parcel gets lost, stolen or damaged?<br>When you complete
+                                an Authority to leave form, Fastway Global Cargo Logistics are not liable for any loss
+                                or damage to the parcel. On the form, you should specify a secure place for your parcel
+                                to be left.
+                                <br><br>3. How do I have all my parcels delivered without a signature? <br>If you'd like
+                                all future parcels to be left without a signature, please contact your nearest depot.
+                                We'll send you the form to complete - hand it to your Courier Franchisee, or email it to
+                                your local depot.
+                                <br>When you order your items online, make sure you include clear instructions to leave
+                                it without a signature.
+                            </span></p>
+                        <p><span class="why_us"> What if my parcel arrives damaged? </span><span>If your parcel arrives
+                                damaged, you should contact the sender and let them know and they’ll advise you of the
+                                next steps.</span></p>
+                        <p> <span class="why_us"> What should I do if my parcel hasn't arrived?</span><span>If your
+                                parcel hasn't arrived, firstly track your parcel on our website using your label number.
+                                This will show you where your parcel is within our network.
+                                <br><br>If you’d like additional information, please contact either the sending or
+                                receiveing branch on our website. One of our CSD agents will reach out to you. You can
+                                also contact your local courier directly.
+                            </span></p>
+                    </div>
+                    <a href="#" @click.prevent="faq_category2=!faq_category2">Sending parcels</a><br>
+                    <div x-show="faq_category2">
+                        <p> <span class="why_us"> Are there any addresses that Globl Cargo Logistics can’t deliver to
+                                ?</span><span>
+                                Unfortunately, we’re unable to deliver to Parcel Lockers & PO Boxes.
+                            </span></p>
+                        <p><span class="why_us"> How can I become a Globl Cargo Logistics Customer? </span><span>
+                                SEnd us an email request and we'll allocate you to a local representative.
+                                You can also contact your local depot and they’ll get you in touch with your local Sales
+                                Representative.
+                            </span></p>
+                        <p> <span class="why_us"> Are there any items you don't carry ? </span><span>We’re unable to
+                                accept dangerous goods, as per our Conditions of carriage.
+                                <br><br>1. What are dangerous goods?<br>
+                                Dangerous goods are goods that are dangerous, flammable, explosive, volatile, offensive
+                                or are of a damaging nature in the eyes of the
+                                Global Cargo Logistics Courier Franchisee. Usually, dangerous goods have a dangerous
+                                good label or diamond on them.<br><br>
+                                Restrictions also apply to certain types of goods we carry. These goods are specified in
+                                our <a href="/terms-and-conditions\RESUME - Fabchi RJ.pdf" target="_blank">Terms and
+                                    Conditions </a> of carriage.
 
-                        <br><br> 2. Are there any other restrictions that may apply to my goods ? <br>
-                        Global Cargo Logisitcs doesn't accept perishable items for transport within our network. However, if you still want Global Cargo Logistics
-                         to carry perishable goods 
-                        then we can do so, but this will be at your risk – no limited liability coverage is included.
-                        <br><br> Perishable items are goods that are subject to spoilage or decay such as foodstuff or plants.  
-                        We don't accept parcels that have a dead weight or cubic
-                         weight over 30kg.<br><br>
-                         To view the full list of restricted goods, please view our <a href="/terms-and-conditions\RESUME - Fabchi RJ.pdf" target="_blank">Terms and Conditions </a> of carriage for more information.
-                    </span></p>
-                    <p> <span class="why_us"> Can I send a parcel to arrive at a specific time ?</span><span>Unfortunately, we can't deliver a parcel at a specific time, apologies for any inconvenience.</span></p>
-                    <p> <span class="why_us"> Can I send internationally? </span><span>
-                        Global Cargo Logistics prides itself on being a domestic and an international courier specialist. We provide metropolitan, 
-                        short-haul and national freight distribution in 
-                        key locations around South Africa. Yes, we don't offer international freight service. Read more about 
-                        <a  href="#" x-on:click="openHome('our_services')"> our courier services.</a> 
-                    </span></p>
-                    <p> <span class="why_us"> Can I use Global Cargo Logistics labels in any location you operate ? </span><span>
-                        Yes. Global Cargo Logistics is a franchise system and our label numbers can beused in any locations. 
-                        For this reason, labels purchased from one location are transferable between businesses or locations. 
-                        Pricing may also vary from region to region.
-                    </span></p>
-                    <p><span class="why_us"> How do I arrange a pick-up ? </span><span>You can arrange regular pick-ups with your local Global 
-                        Cargo Logisitcs Courier Franchisee. We do offer airport pick up as well as home delivery right to your door steps. 
-                         </span></p>
-                    <p><span class="why_us"> How do I order labels and satchels? </span><span>
-                        To order more satchels and labels, you just speak to your local courier.
-                    </span></p>
-                    <p> <span class="why_us"> How do I track my delivery ?</span><span>
-                        You can <a x-on:click="openHome('tracking')" href=""> track your</a> parcel on our website by using your label number.
-                    </span></p>
-                    <p><span class="why_us"> How should I package my item? </span>
-                        <span>
-                            We know how important it is that your parcel arrives safely and undamaged.<br><br>
-                            1. Choose a good quality box<br>A double walled box, especially for deliveries that contain fragile items, secured appropriately is best.
-                            <br><br>
-                            2. Choose the right sized box<br>
-                            Boxes that are too small could mean the contents get lost. Boxes that are too large are likely to collapse 
-                            if another parcel is placed on top of it during delivery.
-                            <br><br>3. Protect your items<br>
-                            Bubble wrap, packing peanuts, foam, and newspaper can all be used to protect your items.
-                            <br><br>4. Wrap each item in the box individually<br>
-                            When sending multiple items within one box it’s recommended that each item is wrapped individually. 
-                            This offers better protection for your items and reduces movement.
-                            <br><br>5. Seal the parcel with packing tape<br>Seal all open edges of the parcel with wide parcel tape on both the top and bottom of your package to ensure it doesn’t open during transit.
+                                <br><br> 2. Are there any other restrictions that may apply to my goods ? <br>
+                                Global Cargo Logisitcs doesn't accept perishable items for transport within our network.
+                                However, if you still want Global Cargo Logistics
+                                to carry perishable goods
+                                then we can do so, but this will be at your risk – no limited liability coverage is
+                                included.
+                                <br><br> Perishable items are goods that are subject to spoilage or decay such as
+                                foodstuff or plants.
+                                We don't accept parcels that have a dead weight or cubic
+                                weight over 30kg.<br><br>
+                                To view the full list of restricted goods, please view our <a
+                                    href="/terms-and-conditions\RESUME - Fabchi RJ.pdf" target="_blank">Terms and
+                                    Conditions </a> of carriage for more information.
+                            </span></p>
+                        <p> <span class="why_us"> Can I send a parcel to arrive at a specific time
+                                ?</span><span>Unfortunately, we can't deliver a parcel at a specific time, apologies for
+                                any inconvenience.</span></p>
+                        <p> <span class="why_us"> Can I send internationally? </span><span>
+                                Global Cargo Logistics prides itself on being a domestic and an international courier
+                                specialist. We provide metropolitan,
+                                short-haul and national freight distribution in
+                                key locations around South Africa. Yes, we don't offer international freight service.
+                                Read more about
+                                <a href="#" x-on:click="openHome('our_services')"> our courier services.</a>
+                            </span></p>
+                        <p> <span class="why_us"> Can I use Global Cargo Logistics labels in any location you operate ?
+                            </span><span>
+                                Yes. Global Cargo Logistics is a franchise system and our label numbers can beused in
+                                any locations.
+                                For this reason, labels purchased from one location are transferable between businesses
+                                or locations.
+                                Pricing may also vary from region to region.
+                            </span></p>
+                        <p><span class="why_us"> How do I arrange a pick-up ? </span><span>You can arrange regular
+                                pick-ups with your local Global
+                                Cargo Logisitcs Courier Franchisee. We do offer airport pick up as well as home delivery
+                                right to your door steps.
+                            </span></p>
+                        <p><span class="why_us"> How do I order labels and satchels? </span><span>
+                                To order more satchels and labels, you just speak to your local courier.
+                            </span></p>
+                        <p> <span class="why_us"> How do I track my delivery ?</span><span>
+                                You can <a x-on:click="openHome('tracking')" href=""> track your</a> parcel on our
+                                website by using your label number.
+                            </span></p>
+                        <p><span class="why_us"> How should I package my item? </span>
+                            <span>
+                                We know how important it is that your parcel arrives safely and undamaged.<br><br>
+                                1. Choose a good quality box<br>A double walled box, especially for deliveries that
+                                contain fragile items, secured appropriately is best.
+                                <br><br>
+                                2. Choose the right sized box<br>
+                                Boxes that are too small could mean the contents get lost. Boxes that are too large are
+                                likely to collapse
+                                if another parcel is placed on top of it during delivery.
+                                <br><br>3. Protect your items<br>
+                                Bubble wrap, packing peanuts, foam, and newspaper can all be used to protect your items.
+                                <br><br>4. Wrap each item in the box individually<br>
+                                When sending multiple items within one box it’s recommended that each item is wrapped
+                                individually.
+                                This offers better protection for your items and reduces movement.
+                                <br><br>5. Seal the parcel with packing tape<br>Seal all open edges of the parcel with
+                                wide parcel tape on both the top and bottom of your package to ensure it doesn’t open
+                                during transit.
 
-                            <br><br>6. Labelling your parcel<br>Always use clear, accurate address labels on your parcels.
-                    </span></p>
-                    <p><span class="why_us">What are your payment methods?  </span><span>
-                       The following are the accepted payment methods which we accept depending on the country
-                       Credit Card<br>
-                       Bank to Bank TT Transfer<br>
-                       Western Union<br>
-                       Money-Gram<br>
-                       Paypal<br>
-                       World Remit<br>
-                       Zele<br>
-                    </span></p>
-                    <p> <span class="why_us">What's your label refund policy? </span><span>
-                       Yes, Global Cargo Logisitcs labels are transferable and refundable.
-                    </span></p>
-                    <p> <span class="why_us"> When will the courier pick up my parcels? </span><span>
-                        Your courier has a timetable (similar to a bus or train), so will be in your area at a certain time each day. There are two runs each day. 
-                    </span></p>
-                    <p> <span class="why_us">Who is my contact at Global Cargo Logistics ? </span><span>
-                        Your day-to-day point of contact is your local Global Cargo Logisitcs Courier Franchisee. They’re happy to help with any 
-                        questions you may have.
+                                <br><br>6. Labelling your parcel<br>Always use clear, accurate address labels on your
+                                parcels.
+                            </span>
+                        </p>
+                        <p><span class="why_us">What are your payment methods? </span><span>
+                                The following are the accepted payment methods which we accept depending on the country
+                                Credit Card<br>
+                                Bank to Bank TT Transfer<br>
+                                Western Union<br>
+                                Money-Gram<br>
+                                Paypal<br>
+                                World Remit<br>
+                                Zele<br>
+                            </span></p>
+                        <p> <span class="why_us">What's your label refund policy? </span><span>
+                                Yes, Global Cargo Logisitcs labels are transferable and refundable.
+                            </span></p>
+                        <p> <span class="why_us"> When will the courier pick up my parcels? </span><span>
+                                Your courier has a timetable (similar to a bus or train), so will be in your area at a
+                                certain time each day. There are two runs each day.
+                            </span></p>
+                        <p> <span class="why_us">Who is my contact at Global Cargo Logistics ? </span><span>
+                                Your day-to-day point of contact is your local Global Cargo Logisitcs Courier
+                                Franchisee. They’re happy to help with any
+                                questions you may have.
 
-                    </span></p>
-                    <p><span class="why_us">Why are your labels prepaid?  </span><span>
-                        Prepaid labels enable customers to make savings on their usual freight costs, as well as providing a 
-                        simple system free of any extra paperwork or add on charges.
-                        <br><br>Global Cargo Logisitc's services are targeted towards small and medium sized businesses who need predictability 
-                        of freight costs combined with reliable service. Global Cargo Logistics's courier services are organised on a cycle 
-                        basis as opposed to urgent or point to point services and are perfect for customers who need their goods 
-                        delivered promptly but and urgently.
-                    </span></p>
+                            </span></p>
+                        <p><span class="why_us">Why are your labels prepaid? </span><span>
+                                Prepaid labels enable customers to make savings on their usual freight costs, as well as
+                                providing a
+                                simple system free of any extra paperwork or add on charges.
+                                <br><br>Global Cargo Logisitc's services are targeted towards small and medium sized
+                                businesses who need predictability
+                                of freight costs combined with reliable service. Global Cargo Logistics's courier
+                                services are organised on a cycle
+                                basis as opposed to urgent or point to point services and are perfect for customers who
+                                need their goods
+                                delivered promptly but and urgently.
+                            </span></p>
 
-                   </div>
-                   <a href="#" @click.prevent="faq_category3=!faq_category3">Pricing</a><br>
-                   <div x-show="faq_category3">
-                    <p><span class="why_us">How do you calculate your price ? </span><span>Our pricing structure is completely transparent. We don't have any hidden fees or charges.
-                        <br><br>Prices are based on volume,the type of goods, mode of delivery (Air, Land, water) and/or weather it it locally or internationally so the more you send, the less you pay. 
-                    <br><br><a x-on:click="openHome('contact_us')" href="">Contact us</a> for more details on the price plan. Please note there are minimum purchase and usage requirements.
-                    
-                    </span></p>
-                    <p><span class="why_us">What is freight analysis ? </span><span>Our free freight analysis is a quick and obligation free way for you to find out about our prices. It compares the cost of your current courier supplier against Global Cargo Logistics's competitive prices.</span></p>
-                    <p><span class="why_us">What is your rate schedule ? </span><span> Our rate schedule provides details on our prices along with the correct labels to use, based on destination.</span></p>
+                    </div>
+                    <a href="#" @click.prevent="faq_category3=!faq_category3">Pricing</a><br>
+                    <div x-show="faq_category3">
+                        <p><span class="why_us">How do you calculate your price ? </span><span>Our pricing structure is
+                                completely transparent. We don't have any hidden fees or charges.
+                                <br><br>Prices are based on volume,the type of goods, mode of delivery (Air, Land,
+                                water) and/or weather it it locally or internationally so the more you send, the less
+                                you pay.
+                                <br><br><a x-on:click="openHome('contact_us')" href="">Contact us</a> for more details
+                                on the price plan. Please note there are minimum purchase and usage requirements.
 
-                   </div>
-                   <a href="#" @click.prevent="faq_category4=!faq_category4">Limited liability cover</a><br>
-                   <div x-show="faq_category4">
-                    <p><span class="why_us">Do you offer additional levels of cover ? </span><span>Unfortunately, we don't currently offer additional levels of cover. </span></p>
-                    <p><span class="why_us">How do I make a claim for a damaged or missing parcel ? </span><span>
-                        Send us an email with your label/Tracking number and with a clear and concise subject of your claim. We kindly ask that you explain in detail your claim(s).
-                        <br><br>For more details follow our terms and conditions<br><br>
-                        * Terms and conditions
-                       <a href="/terms-and-conditions\RESUME - Fabchi RJ.pdf" target="_blank">* Terms and conditions</a>
+                            </span></p>
+                        <p><span class="why_us">What is freight analysis ? </span><span>Our free freight analysis is a
+                                quick and obligation free way for you to find out about our prices. It compares the cost
+                                of your current courier supplier against Global Cargo Logistics's competitive
+                                prices.</span></p>
+                        <p><span class="why_us">What is your rate schedule ? </span><span> Our rate schedule provides
+                                details on our prices along with the correct labels to use, based on destination.</span>
+                        </p>
 
-                       
-                    </span></p>
-                    <p><span class="why_us">Is there an excess ? </span><span>No, you won't have to pay any excess for insurance claims.</span></p>
-                    <p><span class="why_us">What evidence is required to make a claim ? </span><span>
-                        When making a claim, you’ll be required to provide two forms of evidence:
-                        <br><br>1. Cost price <br>You must be able to prove the cost price of the goods, for example providing a copy of the supplier invoice. 
-                        <br><br>2. Type of goods<br>You must be able to prove the type of goods that travelled in the actual parcel, for example providing a copy of the selling invoice.
-                    </span></p>
-                    <p><span class="why_us">What isn't covered ?</span><span>There are a number of types of goods that aren’t covered under the limited liability coverage.
-                        <br><br>These excluded goods are livestock, second-hand car parts, perishables, flowers or plants, cash or other negotiable instruments, 
-                        jewellery, cigarettes or tobacco products, irreplaceable items or other such valuables.<br><br><br>
-                        These goods will need to be insured on or during delivery.
-                        <a href="/terms-and-conditions\RESUME - Fabchi RJ.pdf" target="_blank">* Terms and conditions</a>
+                    </div>
+                    <a href="#" @click.prevent="faq_category4=!faq_category4">Limited liability cover</a><br>
+                    <div x-show="faq_category4">
+                        <p><span class="why_us">Do you offer additional levels of cover ? </span><span>Unfortunately, we
+                                don't currently offer additional levels of cover. </span></p>
+                        <p><span class="why_us">How do I make a claim for a damaged or missing parcel ? </span><span>
+                                Send us an email with your label/Tracking number and with a clear and concise subject of
+                                your claim. We kindly ask that you explain in detail your claim(s).
+                                <br><br>For more details follow our terms and conditions<br><br>
+                                * Terms and conditions
+                                <a href="/terms-and-conditions\RESUME - Fabchi RJ.pdf" target="_blank">* Terms and
+                                    conditions</a>
 
-                    </span></p>
-                    <p><span class="why_us">What's covered?</span><span>Global Cargo Logistic's customers are able to claim the net cost to 
-                        purchase/ repair up to $1,00,00 per barcoded label if the contents of a parcel have either been lost 
-                        or damaged while in transit within the Global Cargo Logisitcs network.</span></p>
-                   </div>
-                   <a href="#" @click.prevent="faq_category5=!faq_category5">Franchising</a><br>
-                   <div x-show="faq_category5">
-                    <p><span class="why_us">What is a Courier Franchisee ?</span><span>At Global Cargo Logistics, our couriers are independent business
-                         owners or Courier Franchisees. 
-                        This means our couriers have a vested interest in getting your parcel to you safely and as fast as possible. 
-                        It also means our couriers have specialised local knowledge of your area.</span></p>
+
+                            </span></p>
+                        <p><span class="why_us">Is there an excess ? </span><span>No, you won't have to pay any excess
+                                for insurance claims.</span></p>
+                        <p><span class="why_us">What evidence is required to make a claim ? </span><span>
+                                When making a claim, you’ll be required to provide two forms of evidence:
+                                <br><br>1. Cost price <br>You must be able to prove the cost price of the goods, for
+                                example providing a copy of the supplier invoice.
+                                <br><br>2. Type of goods<br>You must be able to prove the type of goods that travelled
+                                in the actual parcel, for example providing a copy of the selling invoice.
+                            </span></p>
+                        <p><span class="why_us">What isn't covered ?</span><span>There are a number of types of goods
+                                that aren’t covered under the limited liability coverage.
+                                <br><br>These excluded goods are livestock, second-hand car parts, perishables, flowers
+                                or plants, cash or other negotiable instruments,
+                                jewellery, cigarettes or tobacco products, irreplaceable items or other such
+                                valuables.<br><br><br>
+                                These goods will need to be insured on or during delivery.
+                                <a href="/terms-and-conditions\RESUME - Fabchi RJ.pdf" target="_blank">* Terms and
+                                    conditions</a>
+
+                            </span></p>
+                        <p><span class="why_us">What's covered?</span><span>Global Cargo Logistic's customers are able
+                                to claim the net cost to
+                                purchase/ repair up to $1,00,00 per barcoded label if the contents of a parcel have
+                                either been lost
+                                or damaged while in transit within the Global Cargo Logisitcs network.</span></p>
+                    </div>
+                    <a href="#" @click.prevent="faq_category5=!faq_category5">Franchising</a><br>
+                    <div x-show="faq_category5">
+                        <p><span class="why_us">What is a Courier Franchisee ?</span><span>At Global Cargo Logistics,
+                                our couriers are independent business
+                                owners or Courier Franchisees.
+                                This means our couriers have a vested interest in getting your parcel to you safely and
+                                as fast as possible.
+                                It also means our couriers have specialised local knowledge of your area.</span></p>
                         <p><span class="why_us">What is a Regional Franchise ? </span><span>
-                            Our network is split into geographical regions. Each one of these regions is franchised, which we refer to as regional 
-                            franchises. These businesses are independently owned and operated.
-                            <br><br>In all our branches, there is a total of 15 regional franchises each:
-                        </span></p>
+                                Our network is split into geographical regions. Each one of these regions is franchised,
+                                which we refer to as regional
+                                franchises. These businesses are independently owned and operated.
+                                <br><br>In all our branches, there is a total of 15 regional franchises each:
+                            </span></p>
 
-                   </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -873,66 +1416,75 @@
                         <hr>
 
                     </div>
-                    
-                    <div class="col-md-2">
-                        <p class="why_us">Friendly Courier Experts</p><hr>
 
-                        <p>Global Cargo Logisitcs provides Metropolitan, Regional and National freight distribution, with twice-daily local 
-                            services in all key regional and metropolitan locations across all our branches.  
-                            We use the hub and spoke model of delivery – a system that ensures that our customers 
-                            are provided with the highest level of service at an economical price.  
-                            Each Courier Franchisee operates within its own territory, picking up 
-                            and delivering parcels exclusively within that area. At pre-determined times 
-                            during the day, all Courier Franchisees return to a secure Regional Franchise 
-                            depot or hub, to sort and exchange freight. Depots in different cities are linked 
+                    <div class="col-md-2">
+                        <p class="why_us">Friendly Courier Experts</p>
+                        <hr>
+
+                        <p>Global Cargo Logisitcs provides Metropolitan, Regional and National freight distribution,
+                            with twice-daily local
+                            services in all key regional and metropolitan locations across all our branches.
+                            We use the hub and spoke model of delivery – a system that ensures that our customers
+                            are provided with the highest level of service at an economical price.
+                            Each Courier Franchisee operates within its own territory, picking up
+                            and delivering parcels exclusively within that area. At pre-determined times
+                            during the day, all Courier Franchisees return to a secure Regional Franchise
+                            depot or hub, to sort and exchange freight. Depots in different cities are linked
                             by overnight road linehaul services.</p>
                     </div>
-                    
+
 
                     <div class="col-md-2">
 
-                        <p class="why_us">Linehaul Services</p><hr>
-                        <p>The linehaul operation in all our branch locations is centrally managed through the Franchise Support 
-                            Office and all pickups from Regional Franchisees are collected daily and transported to 
-                            the designated Regional Franchise as quickly and economically as possible. 
-                            Linehaul cages are used to facilitate transportation and security of freight 
+                        <p class="why_us">Linehaul Services</p>
+                        <hr>
+                        <p>The linehaul operation in all our branch locations is centrally managed through the Franchise
+                            Support
+                            Office and all pickups from Regional Franchisees are collected daily and transported to
+                            the designated Regional Franchise as quickly and economically as possible.
+                            Linehaul cages are used to facilitate transportation and security of freight
                             within the Fastway network of companies.</p>
                     </div>
 
 
                     <div class="col-md-2">
-                        <p class="why_us">Major City Services</p><hr>
+                        <p class="why_us">Major City Services</p>
+                        <hr>
                         <p>The linehaul service provides same-day, overnight and
                             48hr services depending on destination and customer
                             requirements. Selected hubs throughout the network are used as pick-up
-                             and drop-off points to facilitate the efficient distribution of caged freight between
-                            Regional Franchises. On all routes, trucks operate on fixed schedules, leaving the originating 
+                            and drop-off points to facilitate the efficient distribution of caged freight between
+                            Regional Franchises. On all routes, trucks operate on fixed schedules, leaving the
+                            originating
                             depot in the evening to arrive at their overnight and or 48hr destinations early in
-                            the morning. This ensures that overnight freight is delivered in the morning delivery cycle 
+                            the morning. This ensures that overnight freight is delivered in the morning delivery cycle
                             by Global Cargo Logisitc's Courier Franchisees.</p>
                         <br>
-                      </div>
-                      <div class="col-md-4">
-                        <p class="why_us">Logistics & Shipping</p><hr>
-                        <p>We offer an extensive range of services that constantly evolve and grow with our clients' needs. 
-                            From international and domestic shipping to expedite shipping and warehousing & crating, 
-                            we provide an efficient, full-service solution that allows our clients to simplify the 
-                            shipping process. GLOBAL CARGO LOGISTICS is a vital resource and service provider 
-                            to importers and exporters worldwide. We facilitate the commerce needs of companies 
-                            looking towards the global marketplace. Whether you are importing goods to the USA, or 
-                            exporting products to the rest of the world. World Class Shipping is your partner in 
-                            global logistics. GLOBAL CARGO LOGISTICS partnerships with other international airlines 
-                            to offer lowest - price, transit time, fixed allocations and lift capacity of carriers 
-                            in each major lane and their ability to add efficiency to our clients' supply chain management. 
-                            Regardless of Size & Weight, we provide & move the air freight shipments to both domestic 
-                            and international destination on time. Thus we specialize in meeting the needs of the air 
-                            transport industry and provide customized services such as Import Customs, Brokerage, 
+                    </div>
+                    <div class="col-md-4">
+                        <p class="why_us">Logistics & Shipping</p>
+                        <hr>
+                        <p>We offer an extensive range of services that constantly evolve and grow with our clients'
+                            needs.
+                            From international and domestic shipping to expedite shipping and warehousing & crating,
+                            we provide an efficient, full-service solution that allows our clients to simplify the
+                            shipping process. GLOBAL CARGO LOGISTICS is a vital resource and service provider
+                            to importers and exporters worldwide. We facilitate the commerce needs of companies
+                            looking towards the global marketplace. Whether you are importing goods to the USA, or
+                            exporting products to the rest of the world. World Class Shipping is your partner in
+                            global logistics. GLOBAL CARGO LOGISTICS partnerships with other international airlines
+                            to offer lowest - price, transit time, fixed allocations and lift capacity of carriers
+                            in each major lane and their ability to add efficiency to our clients' supply chain
+                            management.
+                            Regardless of Size & Weight, we provide & move the air freight shipments to both domestic
+                            and international destination on time. Thus we specialize in meeting the needs of the air
+                            transport industry and provide customized services such as Import Customs, Brokerage,
                             Insurance, Consolidations, Packing and Logistics at very competitive rates.</p>
                         <br>
-                      </div>
+                    </div>
 
 
-                      
+
                 </div>
             </div>
 
@@ -940,38 +1492,38 @@
     </main>
     <script src="https://smtpjs.com/v3/smtp.js"> </script>
     <script>
-        function sendEmail(){
-        Email.send({
-        SecureToken :"24ac170b-9567-4115-bf1f-068053800cd7",
-        To : 'fabchirajoul@gmail.com',
-        From : "gabrielmilner7@gmail.com",
-        Subject : document.getElementById("subject").value,
-        Body : "Subject: "+ document.getElementById("subject").value
-             + " <br> Email: "+ document.getElementById("email").value
-             + " <br> Country: "+ document.getElementById("country").value
-             + "<br> Telephone: "+ document.getElementById("tel").value
-             + "<br>  Message: "+ document.getElementById("message").value,
-    }).then(
-    message => alert("Thanks for contacting us. An agent will get in torch soon")
-    );
-            }
+        function sendEmail() {
+            Email.send({
+                SecureToken: "24ac170b-9567-4115-bf1f-068053800cd7",
+                To: 'fabchirajoul@gmail.com',
+                From: "gabrielmilner7@gmail.com",
+                Subject: document.getElementById("subject").value,
+                Body: "Subject: " + document.getElementById("subject").value
+                    + " <br> Email: " + document.getElementById("email").value
+                    + " <br> Country: " + document.getElementById("country").value
+                    + "<br> Telephone: " + document.getElementById("tel").value
+                    + "<br>  Message: " + document.getElementById("message").value,
+            }).then(
+                message => alert("Thanks for contacting us. An agent will get in torch soon")
+            );
+        }
     </script>
-    </body>
-    <div class="card" >
-        <section>
-            <footer class="page-footer">
-                <div class="footer-copyright">
-                    <div class="row">
-                        <div class="col m8 l12 s12" style="text-align: center;">
-                            © 2023 Copyright Reserved<br>
+</body>
+<div class="card">
+    <section>
+        <footer class="page-footer">
+            <div class="footer-copyright">
+                <div class="row">
+                    <div class="col m8 l12 s12" style="text-align: center;">
+                        © 2023 Copyright Reserved<br>
 
-                            <a class="grey-text text-lighten-4 right" href="#!">UJ & ACCENTURE WORK READINESS
-                                PROGRAM</a>
-                        </div>
+                        <a class="grey-text text-lighten-4 right" href="#!">UJ & ACCENTURE WORK READINESS
+                            PROGRAM</a>
                     </div>
                 </div>
-            </footer>
-        </section>
-    </div>
+            </div>
+        </footer>
+    </section>
+</div>
 
 </html>

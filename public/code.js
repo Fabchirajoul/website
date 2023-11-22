@@ -21,6 +21,9 @@ document.addEventListener("alpine:init", () => {
       faq_category3: false,
       faq_category4: false,
       faq_category5: false,
+      INTERNATIONAL: false,
+      LOCAL: false,
+      IMPORT: false,
 
       openHome(currentSection) {
         this.why_us = false;
@@ -35,6 +38,9 @@ document.addEventListener("alpine:init", () => {
         this.our_customers = false;
         this.our_evolution = false;
         this.why_we_are_different = false;
+        this.INTERNATIONAL = false;
+        this.LOCAL = false;
+        this.IMPORT = false;
         if (currentSection == "contact_us") {
           this.why_us = false;
           this.homepage = false;
@@ -48,6 +54,9 @@ document.addEventListener("alpine:init", () => {
           this.our_customers = false;
           this.our_evolution = false;
           this.why_we_are_different = false;
+          this.INTERNATIONAL = false;
+          this.LOCAL = false;
+          this.IMPORT = false;
         } else if (currentSection == "why_us") {
           this.why_us = true;
           this.homepage = false;
@@ -61,6 +70,9 @@ document.addEventListener("alpine:init", () => {
           this.our_customers = false;
           this.our_evolution = false;
           this.why_we_are_different = false;
+          this.INTERNATIONAL = false;
+          this.LOCAL = false;
+          this.IMPORT = false;
         } else if (currentSection == "tracking") {
           this.why_us = false;
           this.homepage2 = false;
@@ -74,6 +86,9 @@ document.addEventListener("alpine:init", () => {
           this.our_customers = false;
           this.our_evolution = false;
           this.why_we_are_different = false;
+          this.INTERNATIONAL = false;
+          this.LOCAL = false;
+          this.IMPORT = false;
         } else if (currentSection == "about") {
           this.why_us = false;
           this.homepage2 = false;
@@ -88,6 +103,9 @@ document.addEventListener("alpine:init", () => {
           this.our_customers = false;
           this.our_evolution = false;
           this.why_we_are_different = false;
+          this.INTERNATIONAL = false;
+          this.LOCAL = false;
+          this.IMPORT = false;
         } else if (currentSection == "faq") {
           this.why_us = false;
           this.homepage2 = false;
@@ -101,6 +119,9 @@ document.addEventListener("alpine:init", () => {
           this.our_customers = false;
           this.our_evolution = false;
           this.why_we_are_different = false;
+          this.INTERNATIONAL = false;
+          this.LOCAL = false;
+          this.IMPORT = false;
         } else if (currentSection == "our_services") {
           this.why_us = false;
           this.homepage = false;
@@ -114,6 +135,9 @@ document.addEventListener("alpine:init", () => {
           this.our_customers = false;
           this.our_evolution = false;
           this.why_we_are_different = false;
+          this.INTERNATIONAL = false;
+          this.LOCAL = false;
+          this.IMPORT = false;
         } else if (currentSection == "our_awards") {
           this.why_us = false;
           this.homepage = false;
@@ -127,6 +151,9 @@ document.addEventListener("alpine:init", () => {
           this.our_customers = false;
           this.our_evolution = false;
           this.why_we_are_different = false;
+          this.INTERNATIONAL = false;
+          this.LOCAL = false;
+          this.IMPORT = false;
         } else if (currentSection == "our_customers") {
           this.why_us = false;
           this.homepage = false;
@@ -140,6 +167,9 @@ document.addEventListener("alpine:init", () => {
           this.our_customers = true;
           this.our_evolution = false;
           this.why_we_are_different = false;
+          this.INTERNATIONAL = false;
+          this.LOCAL = false;
+          this.IMPORT = false;
         } else if (currentSection == "our_evolution") {
           this.why_us = false;
           this.homepage = false;
@@ -153,6 +183,9 @@ document.addEventListener("alpine:init", () => {
           this.our_customers = false;
           this.our_evolution = true;
           this.why_we_are_different = false;
+          this.INTERNATIONAL = false;
+          this.LOCAL = false;
+          this.IMPORT = false;
         } else if (currentSection == "why_we_are_different") {
           this.why_us = false;
           this.homepage = false;
@@ -166,6 +199,62 @@ document.addEventListener("alpine:init", () => {
           this.our_customers = false;
           this.our_evolution = false;
           this.why_we_are_different = true;
+          this.INTERNATIONAL = false;
+          this.LOCAL = false;
+          this.IMPORT = false;
+        }
+
+
+        else if (currentSection == "INTERNATIONAL") {
+          this.why_us = false;
+          this.homepage = false;
+          this.homepage2 = false;
+          this.contact_us = false;
+          this.about = false;
+          this.tracking = false;
+          this.faq = false;
+          this.our_services = false;
+          this.our_awards = false;
+          this.our_customers = false;
+          this.our_evolution = false;
+          this.why_we_are_different = false;
+          this.INTERNATIONAL = true;
+          this.LOCAL = false;
+          this.IMPORT = false;
+        }
+        else if (currentSection == "LOCAL") {
+          this.why_us = false;
+          this.homepage = false;
+          this.homepage2 = false;
+          this.contact_us = false;
+          this.about = false;
+          this.tracking = false;
+          this.faq = false;
+          this.our_services = false;
+          this.our_awards = false;
+          this.our_customers = false;
+          this.our_evolution = false;
+          this.why_we_are_different = false;
+          this.INTERNATIONAL = false;
+          this.LOCAL = true;
+          this.IMPORT = false;
+        }
+        else if (currentSection == "IMPORT") {
+          this.why_us = false;
+          this.homepage = false;
+          this.homepage2 = false;
+          this.contact_us = false;
+          this.about = false;
+          this.tracking = false;
+          this.faq = false;
+          this.our_services = false;
+          this.our_awards = false;
+          this.our_customers = false;
+          this.our_evolution = false;
+          this.why_we_are_different = false;
+          this.INTERNATIONAL = false;
+          this.LOCAL = false;
+          this.IMPORT = true;
         }
       },
 
@@ -204,9 +293,6 @@ document.addEventListener("alpine:init", () => {
         if (index === this.images.length - 1) index = -1;
         this.activeImage = this.images[index + 1];
       },
-
-
-
 
       imageShareholderhomepage: [
         {
@@ -437,8 +523,6 @@ document.addEventListener("alpine:init", () => {
         this.currentIndexdiferent1 =
           (this.currentIndexdiferent1 + 1) % this.imagesDifferent1.length;
       },
-
-  
 
       // get all price plans ends here
     };
