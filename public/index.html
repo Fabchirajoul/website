@@ -562,76 +562,63 @@
                     <a class="link-secondary me-3" x-on:click="openHome('shareholders')" href="#">BRANCH
                         MANAGERS</a><br>
                     <hr>
+                    <div class="social-media">
+                        <p>Connect with us :</p>
+                        <div class="social-icons">
+                          <a href="#">
+                            <i class="fab fa-facebook-f"></i>
+                          </a>
+                          <a href="#">
+                            <i class="fab fa-twitter"></i>
+                          </a>
+                          <a href="#">
+                            <i class="fab fa-instagram"></i>
+                          </a>
+                          <a href="#">
+                            <i class="fab fa-linkedin-in"></i>
+                          </a>
+                        </div>
+                      </div>
                 </div>
-                <div class="col-md-9">
-                    <div >
-                        
-                        <img src="img/shape.png" class="square" alt="" />
-                        <div class="form">
-                          <div class="contact-info">
-                            <h3 class="title">Let's get in touch</h3>
-                            <p class="text">
-                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-                              dolorum adipisci recusandae praesentium dicta!
-                            </p>
-                  
-                            <div class="info">
-                              <div class="information">
-                                <img src="img/location.png" class="icon" alt="" />
-                                <p>92 Cherry Drive Uniondale, NY 11553</p>
-                              </div>
-                              <div class="information">
-                                <img src="img/email.png" class="icon" alt="" />
-                                <p>lorem@ipsum.com</p>
-                              </div>
-                              <div class="information">
-                                <img src="img/phone.png" class="icon" alt="" />
-                                <p>123-456-789</p>
-                              </div>
-                            </div>
-                  
-                            <div class="social-media">
-                              <p>Connect with us :</p>
-                              <div class="social-icons">
-                                <a href="#">
-                                  <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="#">
-                                  <i class="fab fa-twitter"></i>
-                                </a>
-                                <a href="#">
-                                  <i class="fab fa-instagram"></i>
-                                </a>
-                                <a href="#">
-                                  <i class="fab fa-linkedin-in"></i>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                  
-                          <div class="contact-form">
+
+                <div class="col-md-5">
+                    <p class="why_us">OUR LOCATIONS</p>
+
+                    
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.7910881105176!2d28.045330475404974!3d-26.20347336394429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950e9bfdff2349%3A0x82965b6b717a45e4!2s112%20Helen%20Joseph%20St%2C%20Johannesburg%2C%202000!5e0!3m2!1sen!2sza!4v1700670795512!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                
+                
+                
+                </div>
+                <div class="col-md-4">
+                     <div class="contact-form">
                             <span class="circle one"></span>
                             <span class="circle two"></span>
                   
-                            <form onsubmit="sendEmail()">
+                            <form onsubmit="sendEmail(); reset(); return false;">
                               <h3 class="title">Contact us</h3>
-                              <p x-text="contact_message"></p>
                               <div class="input-container">
-                                <input type="text"  name="subject" id="subject" class="input" placeholder="Subject" required/>
+                                <input type="text" name="subject" id="subject" class="input" placeholder="Subject" required/>
                               </div>
                               <div class="input-container">
-                                <input  type="email" name="email" id="email" class="input" placeholder="Email" required/>
+                                <input type="email" name="email" id="email" class="input" placeholder="Email" required/>
                                 
                               </div>
                               <div class="input-container">
-                                <input type="tel" name="phone"  id="tel" class="input" placeholder="Telephone" required/>
+                                <input type="text" name="country" id="country" class="input" placeholder="Country" required/>
+                                <datalist id="country">
+                                    <option value="1"></option>
+                                </datalist>
+                                
+                              </div>
+                              <div class="input-container">
+                                <input type="tel" name="phone" id="tel" class="input" placeholder="Telephone" required/>
                                 
                               </div>
                               <div class="input-container textarea">
                                 <textarea name="message" id="message" class="input"></textarea>
                               </div>
-                              
-                              <button @click="sendEmail()" class="btn">Send</button>
+                              <button class="btn" @click="sendEmail()">Send Message</button>
                             </form>
                           </div>
                         </div>
@@ -950,16 +937,14 @@
         </section>
     </main>
     <script src="https://smtpjs.com/v3/smtp.js"> </script>
-    <script>
-        
-    </script>
+    
     </body>
     <div class="card" >
         <section>
             <footer class="page-footer">
                 <div class="footer-copyright">
                     <div class="row">
-                        <div class="col m8 l3 s3" style="text-align: center;">
+                        <div class="col m8 l12 s12" style="text-align: center;">
                             © 2023 Copyright Reserved<br>
 
                             <a class="grey-text text-lighten-4 right" href="#!">UJ & ACCENTURE WORK READINESS
