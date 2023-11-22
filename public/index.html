@@ -616,18 +616,18 @@
                             <form onsubmit="sendEmail(); reset(); return false;">
                               <h3 class="title">Contact us</h3>
                               <div class="input-container">
-                                <input type="text" name="subject" id="subject" class="input" placeholder="Subject"/>
+                                <input type="text" name="subject" id="subject" class="input" placeholder="Subject" required/>
                               </div>
                               <div class="input-container">
-                                <input type="email" name="email" id="email" class="input" placeholder="Email" />
+                                <input type="email" name="email" id="email" class="input" placeholder="Email" required/>
                                 
                               </div>
                               <div class="input-container">
-                                <input type="tel" name="phone" id="tel" class="input" placeholder="Telephone"/>
+                                <input type="tel" name="phone" id="tel" class="input" placeholder="Telephone" required/>
                                 
                               </div>
                               <div class="input-container textarea">
-                                <textarea name="message" id="message" class="input" placeholder="Write your email and how we can be of help to you"></textarea>
+                                <textarea name="message" id="message" class="input"></textarea>
                               </div>
                               <input type="submit" value="Send" class="btn" />
                             </form>
