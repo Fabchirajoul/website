@@ -169,16 +169,27 @@ document.addEventListener("alpine:init", () => {
         }
       },
 
+      init() {
+        this.activeImage = this.images.length > 0 ? this.images[0] : null;
+        this.startTimer();
+        this.startTimerWhyUs();
+        this.differentImage();
+        this.differentImage1();
+        this.differenText();
+      },
+
       images: [
-        "/images/1.jpg",
-        "/images/2.jpg",
-        "/images/3.jpg",
-        "/images/4.jpg",
-        "/images/5.jpg",
-        "/images/6.jpg",
-        "/images/7.jpg",
-        "/images/8.jpg",
-        "/images/9.jpg",
+        "/images/homepage/1.jpg",
+        "/images/homepage/2.jpg",
+        "/images/homepage/3.jpg",
+        "/images/homepage/4.jpg",
+        "/images/homepage/5.jpg",
+        "/images/homepage/6.jpg",
+        "/images/homepage/7.jpg",
+        "/images/homepage/8.jpg",
+        "/images/homepage/9.jpg",
+        "/images/homepage/10.jpg",
+        "/images/homepage/11.jpg",
       ],
       activeImage: null,
 
@@ -193,7 +204,11 @@ document.addEventListener("alpine:init", () => {
         if (index === this.images.length - 1) index = -1;
         this.activeImage = this.images[index + 1];
       },
-      imageStart: [
+
+
+
+
+      imageShareholderhomepage: [
         {
           image: "/images/our_services/airfright.jpg",
           text: "With years of experience in the freight industry, GLOBAL CARGO LOGISTICS is known for offering reliable and efficient air-freight forwarding service throughout the world.",
@@ -209,74 +224,60 @@ document.addEventListener("alpine:init", () => {
           text: "We aspire to be your reliable Supply Chain Partner by providing high level professional warehousing services and provide assurance of the safe arrival of your right product anywhere and at anytime.",
           title: "WAREHOUSING AND DISTRIBUTION",
         },
+
+        {
+          image: "/images/our_services/warehouse.jpg",
+          text: "We aspire to be your reliable Supply Chain Partner by providing high level professional warehousing services and provide assurance of the safe arrival of your right product anywhere and at anytime.",
+          title: "INTERNATIONAL PET TRANSPORT",
+        },
       ],
-      currentIndex: null,
+      currentIndex: 0,
 
       startTimer() {
         setInterval(() => {
-          this.currentIndex = (this.currentIndex + 1) % this.imageStart.length;
-      
-          // Check if currentIndex reaches the end of the array
-          if (this.currentIndex === this.imageStart.length) {
-            this.currentIndex = this.imageStart.length-1; // Reset to -1 to restart the loop
-          }
-        }, 10000);
+          this.currentIndex =
+            (this.currentIndex + 1) % this.imageShareholderhomepage.length;
+        }, 8000);
       },
 
       imageShareholder: [
         {
-          image: "/images/4.jpg",
-          name: "Rijraj",
+          image: "/images/shareholder/1.jpg",
+          name: "Image 1",
           position: "CEO",
           country: "Cameroon",
           biograpghy:
             "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora aspernatur aut obcaecati cum magnam quidem harum vel? Voluptatem aliquid molestiae nobis beatae perspiciatis non possimus repellendus, quo esse autem nulla.",
         },
         {
-          image: "/images/5.jpg",
-          name: "Damian",
+          image: "/images/shareholder/2.jpg",
+          name: "Image 2",
           position: "Director",
           country: "South Africa",
           biograpghy:
             "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora aspernatur aut obcaecati cum magnam quidem harum vel? Voluptatem aliquid molestiae nobis beatae perspiciatis non possimus repellendus, quo esse autem nulla.",
         },
         {
-          image: "/images/6.jpg",
-          name: "Iniesta",
+          image: "/images/shareholder/3.jpg",
+          name: "Image 3",
           position: "Contact Person",
           country: "Australia",
           biograpghy:
             "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora aspernatur aut obcaecati cum magnam quidem harum vel? Voluptatem aliquid molestiae nobis beatae perspiciatis non possimus repellendus, quo esse autem nulla.",
         },
         {
-          image: "/images/7.jpg",
-          name: "Renzo",
+          image: "/images/shareholder/4.jpg",
+          name: "Image 4",
           position: "CEO",
           country: "Brazil",
           biograpghy:
             "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora aspernatur aut obcaecati cum magnam quidem harum vel? Voluptatem aliquid molestiae nobis beatae perspiciatis non possimus repellendus, quo esse autem nulla.",
         },
         {
-          image: "/images/8.jpg",
-          name: "Simon",
+          image: "/images/shareholder/5.jpeg",
+          name: "Image 5",
           position: "CEO",
           country: "Poland",
-          biograpghy:
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora aspernatur aut obcaecati cum magnam quidem harum vel? Voluptatem aliquid molestiae nobis beatae perspiciatis non possimus repellendus, quo esse autem nulla.",
-        },
-        {
-          image: "/images/9.jpg",
-          name: "Fabchi",
-          position: "CEO",
-          country: "Netherlands",
-          biograpghy:
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora aspernatur aut obcaecati cum magnam quidem harum vel? Voluptatem aliquid molestiae nobis beatae perspiciatis non possimus repellendus, quo esse autem nulla.",
-        },
-        {
-          image: "/images/1.jpg",
-          name: "Jumfan",
-          position: "CEO",
-          country: "USA",
           biograpghy:
             "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora aspernatur aut obcaecati cum magnam quidem harum vel? Voluptatem aliquid molestiae nobis beatae perspiciatis non possimus repellendus, quo esse autem nulla.",
         },
@@ -345,6 +346,7 @@ document.addEventListener("alpine:init", () => {
         "images/why_different/5.png",
         "images/why_different/6.png",
       ],
+
       currentIndexdiferent: 0,
       differentImage() {
         this.currentIndexdiferent =
@@ -436,41 +438,7 @@ document.addEventListener("alpine:init", () => {
           (this.currentIndexdiferent1 + 1) % this.imagesDifferent1.length;
       },
 
-      formData : [
-        { name: '', email: '', message: '' },],
-        name: '',
-        email: '',
-        message: '',
-        contact_message:"",
-
-      submitForm() {
-        if (!isValidEmail(this.email)) {
-          // alert('Invalid email address');
-          this.contact_message = "Sorry the email address entered is wrong";
-          return;
-        }
-
-        // Use Axios to send data to the server
-        axios.post('process_form.php', this.$data.formData)
-          .then(response => {
-            console.log(response.data);
-            this.contact_message = "Thank you for contacting us. An agent will get back to you shortly";
-          })
-          .catch(error => {
-            console.error('Error:', error);
-            // alert('Error submitting form. Please try again.');
-            this.contact_message = "There seems to be an error. Please ensure that your details are entered correctly";
-          });
-      },
-
-
-      init() {
-        this.activeImage = this.images.length > 0 ? this.images[0] : null;
-        this.startTimer();
-        this.startTimerWhyUs();
-        this.differentImage();
-        this.differentImage1();
-      },
+  
 
       // get all price plans ends here
     };

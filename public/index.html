@@ -137,12 +137,12 @@
                 <div class="col-md-4">
                     <h3>OUR SERVICES</h3>
                     <p style="text-align:justify"></p>
-                    <a href="#" x-on:click="openHome('our_services')" x-text="imageStart[currentIndex].title"></a>
-                    <p x-on:click="openHome('our_services')" x-text="imageStart[currentIndex].text">
+                    <a href="#" x-on:click="openHome('our_services')" x-text="imageShareholderhomepage[currentIndex].title"></a>
+                    <p x-on:click="openHome('our_services')" x-text="imageShareholderhomepage[currentIndex].text">
                     <p>
                         <br>
                         <!-- <template x-for="image in images"> -->
-                        <img :src="imageStart[currentIndex].image" alt="Current Image for our Servoces" width="100%">
+                        <img :src="imageShareholderhomepage[currentIndex].image" alt="Current Image for our Services" width="100%">
                         <!-- </template> -->
                 </div>
             </div>
@@ -613,20 +613,25 @@
                             <span class="circle one"></span>
                             <span class="circle two"></span>
                   
-                            <form action="index.html" autocomplete="off">
+                            <form onsubmit="sendEmail(); reset(); return false;">
                               <h3 class="title">Contact us</h3>
                               <div class="input-container">
-                                <input type="text" name="name" class="input" required/>
+                                <input type="text" name="subject" id="subject" class="input" required/>
+                                <label for="">Subject</label>
+                                <span>SUbject</span>
+                              </div>
+                              <div class="input-container">
+                                <input type="text" name="name" id="name" class="input" required/>
                                 <label for="">Username</label>
                                 <span>Username</span>
                               </div>
                               <div class="input-container">
-                                <input type="email" name="email" class="input" required/>
+                                <input type="email" name="email" id="email" class="input" required/>
                                 <label for="">Email</label>
                                 <span>Email</span>
                               </div>
                               <div class="input-container">
-                                <input type="tel" name="phone" class="input" required/>
+                                <input type="tel" name="phone" id="phone" class="input" required/>
                                 <label for="">Phone</label>
                                 <span>Phone</span>
                               </div>
@@ -644,24 +649,34 @@
             </div>
         </section>
 
+        <section x-cloak>
+            <div class="row">
+                <div class="row" x-show="tracking">
+
+                    <div class="col-md-4">
+                        <h5>ONLINE TRACKING SYSTEM</h5>
+                        <hr>
+                        <img src="images/tracking/map2.jpg"><br>
+                        <br>
+                        <hr>
 
 
-        <section>
-            <div class="col l12 m12 s12" x-show="tracking">
-                <p>tracking</p>
-                <div class="col l3 m6 s6">
-                    <img src="images/RJ.jpeg" width="75%">
-                    <b>
-                        <p>Surname: &nbsp;<span>Fabchi</span></p>
-                        <p>Initials: &nbsp;<span>RJ</span></p>
-                        <p>Email: &nbsp;<span>fabchirajoul@gmail.com</span></p>
-                        <p>Phone Number: &nbsp;<span>+2763382663</span></p>
-                        <p>Nationality: &nbsp;<span>Cameroon</span></p>
-                        <p>Discipline: &nbsp;<span>MINING ENGINEER | Machine learning Expert</span></p>
-                    </b>
+                    </div>
+                    <div class="col-md-8">
+                        <h5 class="why_us">Online Tracking</h5>
+                        <hr>
+                        
+                        <form>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <input type="text"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
                 </div>
-            </div>
-
         </section>
 
         <!-- faq  -->
@@ -941,9 +956,24 @@
             </div>
 
         </section>
-
-
     </main>
+    <script src="https://smtpjs.com/v3/smtp.js"> </script>
+    <script>
+        function sendEmail(){
+
+        Email.send({
+        SecureToken : "24ac170b-9567-4115-bf1f-068053800cd7",
+        To : 'fabchirajoul@gmail.com',
+        From : document.getElementById("email").value,
+        Subject : document.getElementById("subject").value,
+        
+        Body : "And this is the body"
+    }).then(
+    message => alert(message)
+    );
+            }
+    </script>
+    </body>
     <div class="card" >
         <section>
             <footer class="page-footer">
