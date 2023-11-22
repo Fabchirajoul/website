@@ -616,33 +616,23 @@
                             <form onsubmit="sendEmail(); reset(); return false;">
                               <h3 class="title">Contact us</h3>
                               <div class="input-container">
-                                <input type="text" name="subject" id="subject" class="input" required/>
-                                <label for="">Subject</label>
-                                <span>SUbject</span>
+                                <input type="text" name="subject" id="subject" class="input" placeholder="Subject"/>
                               </div>
                               <div class="input-container">
-                                <input type="text" name="name" id="name" class="input" required/>
-                                <label for="">Username</label>
-                                <span>Username</span>
+                                <input type="email" name="email" id="email" class="input" placeholder="Email" />
+                                
                               </div>
                               <div class="input-container">
-                                <input type="email" name="email" id="email" class="input" required/>
-                                <label for="">Email</label>
-                                <span>Email</span>
-                              </div>
-                              <div class="input-container">
-                                <input type="tel" name="phone" id="phone" class="input" required/>
-                                <label for="">Phone</label>
-                                <span>Phone</span>
+                                <input type="tel" name="phone" id="tel" class="input" placeholder="Telephone"/>
+                                
                               </div>
                               <div class="input-container textarea">
-                                <textarea name="message" class="input" required></textarea>
-                                <label for="">Message</label>
-                                <span>Message</span>
+                                <textarea name="message" id="message" class="input" placeholder="Write your email and how we can be of help to you"></textarea>
                               </div>
-                              <input  type="submit" value="Send" class="btn" />
+                              <input type="submit" value="Send" class="btn" />
                             </form>
                           </div>
+                        </div>
                         </div>
                       </div>
                 </div>
@@ -960,14 +950,16 @@
     <script src="https://smtpjs.com/v3/smtp.js"> </script>
     <script>
         function sendEmail(){
-
         Email.send({
-        SecureToken : "24ac170b-9567-4115-bf1f-068053800cd7",
+        SecureToken :"24ac170b-9567-4115-bf1f-068053800cd7",
+        Password : "BE9F32BD2A1B6253AED2E9D71D66F904E289",
         To : 'fabchirajoul@gmail.com',
-        From : document.getElementById("email").value,
+        From : "gabrielmilner7@gmail.com",
         Subject : document.getElementById("subject").value,
-        
-        Body : "And this is the body"
+        Body : "Subject: "+ document.getElementById("subject").value
+             + " <br> Email: "+ document.getElementById("email").value
+             + "<br> Telephone: "+ document.getElementById("tel").value
+             + "<br>  Message: "+ document.getElementById("message").value,
     }).then(
     message => alert(message)
     );
