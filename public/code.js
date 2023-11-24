@@ -265,6 +265,7 @@ document.addEventListener("alpine:init", () => {
         this.differentImage();
         this.differentImage1();
         this.differenText();
+        this.startLoop1();
       },
 
       images: [
