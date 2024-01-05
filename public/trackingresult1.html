@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOD-EX LOGISTICS</title>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="https://smtpjs.com/v3/smtp.js" defer>
+    </script>
+
+    <script src="code.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css" rel="stylesheet" />
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
+        integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="css/style.css" rel="stylesheet" />
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body class="container">
+    <main class="card" x-data="CAPSTONEWIDGET" x-cloak>
+        <section>
+
+            <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-black">
+
+                <div class="container">
+                    <a class="navbar-brand mt-2 mt-lg-0" href="/"> DOD-EX LOGISTICS
+                    </a>
+                    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                        data-mdb-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo02" x-cloak>
+
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                            <li class="nav-item">
+                                <a class="link-secondary me-3" href="index.html">HOME</a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+
+            </nav>
+            <br><br><br>
+        </section>
+        <!-- home page  -->
+        <section>
+            <div class="row">
+                <div class="col-md-12" x-show="homapage">
+                    <div class="col-md-12">
+                        <template x-for="image in images">
+                            <img class="homeImage" x-show="activeImage===image" :src="image" alt="" />
+                        </template>
+
+                        <div>
+                            <span style="float: left;">
+                                <a href="" @click.prevent="prev" class="badge rounded-pill badge-info">PREVIOUS
+
+                                </a></span>
+                            <span style="float: right;">
+                                <a href="" @click.prevent="next" class="badge rounded-pill badge-info">NEXT</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+
+        <section x-cloak>
+            <div class="row">
+                <div class="row">
+
+                    <div class="col-md-3">
+                        <h5>REAL TIME</h5>
+                        <hr>
+                        <img src="images/tracking/map2.jpg" class="hompage2Image"><br>
+                        <br>
+                        <hr>
+
+
+                    </div>
+                    <div class="col-md-9">
+                        <h5 class="why_us">Online Tracking</h5>
+                        <hr>
+                        <p><span style="float: left;">BL No / Airway bill No</span><span style="float: right;"><img
+                                    src="images/tracking/barcode2.png"><br>
+                                &nbsp;&nbsp;D
+                                &nbsp;&nbsp;O
+                                &nbsp;&nbsp;D
+                                &nbsp;&nbsp;E
+                                &nbsp;&nbsp;X
+                                &nbsp;&nbsp;2
+                                &nbsp;&nbsp;4
+                                &nbsp;&nbsp;1
+                                &nbsp;&nbsp;M
+                                &nbsp;&nbsp;Y
+                            </span>
+                        </p>
+
+                        <!-- <form> -->
+                        <table>
+                            <thead>
+                                <tr style="background-color: aqua;">
+                                    <th style="color: black; text-align: center;">CONSIGNOR / SENDER</span></th>
+                                    <th style="color: black; text-align: center;">CONSIGNEE / RECEIVER</span></th>
+                                </tr>
+                                <tr>
+                                    <!-- sender  -->
+                                    <td scope="col"
+                                        style="width: 235px; height: 30px; color: black; text-align: center;">
+                                        <div style="text-align: center;">
+                                            <div><span style="font-size:12px;">CCOMPANY NAME: LINKS BIRDS PAPAGAYE
+                                                    PARROT FARM</span></div>
+
+                                            <div><span style="font-size:12px;">ADDRESS: MFMP+XQ7, Maseru Rothe,
+                                                    Maseru&nbsp;</span></div>
+
+                                            <div><span style="font-size:12px;">CONTACT PERSON&nbsp;Miss. Matshidiso
+                                                    Sophie Mogale</span></div>
+
+                                            <div><span style="font-size:12px;">EMAIL: linksbirdsfarm@gmail.com</span>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <!-- receiver  -->
+                                    <td scope="col"
+                                        style="width: 268px; height: 100px; color: black; text-align: center;">
+                                        <div style="text-align: center;">
+                                            <div><span style="font-size:12px;">CONTACT PERSON: Peng Tiaoming Tobias
+                                                </span></div>
+
+                                            <div><span style="font-size:12px;">ADDRESS: D’grande
+                                                    5 Jalan Indah
+                                                    14/2 Taman bukit Indah , 81200 Johor Bahru
+                                                    Johor , Malaysia&nbsp;</span></div>
+
+                                            <div><span style="font-size:12px;">TEL:&nbsp;XXXXXXX</span></div>
+
+                                            <div><span style="font-size:12px;">EMAIL: XXXXXXX</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+
+                                <tr style="text-align: center;">
+                                    <td scope="col"
+                                        style="width: 235px; text-align: center; background-color: aquamarine;">
+                                        <span style="font-size:15px; float: left;"><b>TYPE OF
+                                                DESCRIPTION</b></span>
+                                    </td>
+
+                                    <td scope="col"
+                                        style="width: 268px; height: 25px; text-align: center;  background-color: aquamarine;">
+                                        <span style="font-size: 15px; float: right;"><b>SPECIFICATION</b></span>
+                                    </td>
+
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                <tr
+                                    style=" background-color: antiquewhite; font-size:10px; width: 68px; height: 25px; text-align: center; ">
+                                    <td scope="col" style="text-align: center;">
+                                        <span><b>REGISTRATION DATE</b></span>
+                                    </td>
+
+                                    <td scope="col" style="text-align: center;">
+                                        <span><b>JANUARY 1ST 2024</b></span>
+                                    </td>
+
+                                </tr>
+
+                                <tr
+                                    style=" background-color: antiquewhite; font-size:10px; width: 68px; height: 25px; text-align: center; ">
+                                    <td scope="col" style="text-align: center;">
+                                        <span><b>PRODUCT DESCRIPTION</b></span>
+                                    </td>
+
+                                    <td scope="col" style="text-align: center;">
+                                        <span><b>FERTILE PARROT EGGS</b></span>
+                                    </td>
+
+                                </tr>
+
+                                <tr
+                                    style=" background-color: antiquewhite; font-size:10px; width: 68px; height: 25px; text-align: center; ">
+                                    <td scope="col" style="text-align: center;">
+                                        <span><b>QUANTITY</b></span>
+                                    </td>
+
+                                    <td scope="col" style="text-align: center;">
+                                        <span><b>10 PIECES</b></span>
+                                    </td>
+
+                                </tr>
+
+                                <tr
+                                    style=" background-color: antiquewhite; font-size:10px; width: 68px; height: 25px; text-align: center; ">
+                                    <td scope="col" style="text-align: center;">
+                                        <span><b>FINAL DESTINATION ADDRESS</b></span>
+                                    </td>
+
+                                    <td scope="col" style="text-align: center;">
+                                        <span><b>D'grande
+                                                5 Jalan Indah
+                                                14/2 Taman bukit Indah , 81200 Johor Bahru
+                                                Johor , Malaysia</b></span>
+                                    </td>
+
+                                </tr>
+
+                                <tr
+                                    style=" background-color: antiquewhite; font-size:10px; width: 68px; height: 25px; text-align: center; ">
+                                    <td scope="col" style="text-align: center;">
+                                        <span><b>PORT OF LOADING</b></span>
+                                    </td>
+
+                                    <td scope="col" style="text-align: center;">
+                                        <span><b>OR TAMBO INTERNATIONAL AIRPORT</b></span>
+                                    </td>
+
+                                </tr>
+
+                                <tr
+                                    style=" background-color: antiquewhite; font-size:10px; width: 68px; height: 25px; text-align: center; ">
+                                    <td scope="col" style="text-align: center;">
+                                        <span><b>PORT OF DISCHARGE</b></span>
+                                    </td>
+
+                                    <td scope="col" style="text-align: center;">
+                                        <span><b>SENAI AIRPORT, JOHOR , MALAYSIA</b></span>
+                                    </td>
+
+                                </tr>
+
+                                <tr
+                                    style=" background-color: antiquewhite; font-size:10px; width: 68px; height: 25px; text-align: center; ">
+                                    <td scope="col" style="text-align: center;">
+                                        <span><b>MODE</b></span>
+                                    </td>
+
+                                    <td scope="col" style="text-align: center;">
+                                        <span><b>AIR FREIGHT DELIVERY</b></span>
+                                    </td>
+
+                                </tr>
+
+                                <tr
+                                    style=" background-color: antiquewhite; font-size:10px; width: 68px; height: 25px; text-align: center; ">
+                                    <td scope="col" style="text-align: center;">
+                                        <span><b>VOYAGE</b></span>
+                                    </td>
+
+                                    <td scope="col" style="text-align: center;">
+                                        <span><b>NOT REQUIRED</b></span>
+                                    </td>
+
+                                </tr>
+
+                                <tr
+                                    style=" background-color: antiquewhite; font-size:10px; width: 68px; height: 25px; text-align: center; ">
+                                    <td scope="col" style="text-align: center;">
+                                        <span><b>DEPARTURE DATE</b></span>
+                                    </td>
+
+                                    <td scope="col" style="text-align: center;">
+                                        <span><b>FRIDAY 5TH JANUARY 2024</b></span>
+                                    </td>
+
+                                </tr>
+
+
+
+                                <tr
+                                    style=" background-color: antiquewhite; font-size:10px; width: 68px; height: 25px; text-align: center; ">
+                                    <td scope="col" style="text-align: center;">
+                                        <span><b>ARRIVAL DATE</b></span>
+                                    </td>
+
+                                    <td scope="col" style="text-align: center;">
+                                        <span><b>TUESDAY 9TH JANUARY 2024 </b></span>
+                                    </td>
+
+                                </tr>
+
+                                <tr
+                                    style=" background-color: antiquewhite; font-size:10px; width: 68px; height: 25px; text-align: center; ">
+                                    <td scope="col" style="text-align: center;">
+                                        <span><b>CARRIER</b></span>
+                                    </td>
+
+                                    <td scope="col" style="text-align: center;">
+                                        <span><b>DOD-EX LOGISTICS</b></span>
+                                    </td>
+
+                                </tr>
+
+                                <tr
+                                    style=" background-color: antiquewhite; font-size:10px; width: 68px; height: 25px; text-align: center; ">
+                                    <td scope="col" style="text-align: center;">
+                                        <span><b>VESSEL</b></span>
+                                    </td>
+
+                                    <td scope="col" style="text-align: center;">
+                                        <span><b>NOT REQUIRED</b></span>
+                                    </td>
+
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+
+
+                        <!-- </form> -->
+                    </div>
+                </div>
+        </section>
+
+        <section>
+            <div class="row">
+                <div class="col-md-12">
+                    <table>
+
+
+                        <thead>
+                            <tr style="background-color: #212529 ; color : #FFFFFF;">
+                                <th style=" color : #FFFFFF;">
+                                    Date
+                                </th>
+                                <th style=" color : #FFFFFF;">
+                                    Time
+                                </th>
+                                <th style=" color : #FFFFFF;">
+                                    Location
+                                </th>
+                                <th style=" color : #FFFFFF;">
+                                    Next Transit Port
+                                </th>
+                                <th style=" color : #FFFFFF;">
+                                    Status
+                                </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td style="color: black;">Friday 5th January 2024</td>
+                                <td style="color: black;">06:15AM</td>
+                                <td style="color: black;">Johannesburg South Africa</td>
+                                <td style="color: black;">Addis Ababa International Airport</td>
+                                <td style="color: black;">Order Confirmed</td>
+                            </tr>
+
+                            <tr>
+                                <td style="color: black;">Friday 5th January 2024</td>
+                                <td style="color: black;">06:15AM</td>
+                                <td style="color: black;">Johannesburg South Africa</td>
+                                <td style="color: black;">Addis Ababa International Airport</td>
+                                <td style="color: black;">Enter warehouse in South Africa</td>
+                            </tr>
+
+                            <tr>
+                                <td style="color: black;">Friday 5th January 2024</td>
+                                <td style="color: black;">06:15AM</td>
+                                <td style="color: black;">Johannesburg South Africa</td>
+                                <td style="color: black;">Addis Ababa International Airport</td>
+                                <td style="color: black;">Processing</td>
+                            </tr>
+
+                            <tr>
+                                <td style="color: black;">Friday 5th January 2024</td>
+                                <td style="color: black;">09:25AM</td>
+                                <td style="color: black;">Johannesburg South Africa</td>
+                                <td style="color: black;">Addis Ababa International Airport</td>
+                                <td style="color: black;">Waiting Bunk Delivery</td>
+                            </tr>
+
+                            
+                        </tbody>
+                    </table>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section>
+            <div class="row">
+                <div class="col-md-12">
+                   
+
+
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.4981423405197!2d103.6541841108143!3d1.473972198505974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da0d1517eac5cd%3A0x3d8c6225306091a9!2zROKAmWdyYW5kZQ!5e0!3m2!1sen!2sza!4v1704442179720!5m2!1sen!2sza"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <script src="https://smtpjs.com/v3/smtp.js"> </script>
+    <script>
+        function sendEmail() {
+            Email.send({
+                SecureToken: "24ac170b-9567-4115-bf1f-068053800cd7",
+                To: 'fabchirajoul@gmail.com',
+                From: "gabrielmilner7@gmail.com",
+                Subject: document.getElementById("subject").value,
+                Body: "Subject: " + document.getElementById("subject").value
+                    + " <br> Email: " + document.getElementById("email").value
+                    + " <br> Country: " + document.getElementById("country").value
+                    + "<br> Telephone: " + document.getElementById("tel").value
+                    + "<br>  Message: " + document.getElementById("message").value,
+            }).then(
+                message => alert("Thanks for contacting us. An agent will get in torch soon")
+            );
+        }
+    </script>
+</body>
+
+
+
+<div class="card">
+    <section>
+        <footer class="page-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <p class="white-text" x-on:click="openHome('about')">ABOUT</p>
+                        <a href="#" x-on:click="openHome('why_us')" style="color: white;">WHY US</a><br>
+                        <a href="#" x-on:click="openHome('about')" href="#" style="color: white;">BRANCH
+                            MANAGERS</a><br>
+                        <a href="#" x-on:click="openHome('branch_managers')" style="color: white;">OUR REWARDS</a><br>
+                        <a href="#" x-on:click="openHome('branch_managers')" style="color: white;">OUR CUSTOMERS</a><br>
+                        <a href="#" x-on:click="openHome('branch_managers')" style="color: white;">OUR EVOLUTION</a><br>
+                        <a href="#" x-on:click="openHome('branch_managers')" style="color: white;">OUR REWARDS</a><br>
+                        <a href="#" x-on:click="openHome('branch_managers')" style="color: white;">WHY WE ARE
+                            DIFFERENT</a><br>
+
+                    </div>
+
+                    <div class="col-md-2">
+                        <p class="white-text" x-on:click="openHome('why_us')">WHY US</p>
+
+                        <a href="#" x-on:click="openHome('branch_managers')" style="color: white;">BRANCH MANAGERS</a>
+
+
+                    </div>
+
+                    <div class="col-md-3">
+                        <p class="white-text">OUR SERVICES</p>
+                        <a href="#" x-on:click="openHome('LOCAL')" style="color: white;">LOCAL</a><br>
+                        <a href="#" x-on:click="openHome('INTERNATIONAL')" style="color: white;">INTERNATIONAL</a><br>
+                        <a href="#" x-on:click="openHome('IMPORT')" style="color: white;">IMPORT</a><br>
+
+                        <a href="#" x-on:click="openHome('our_services')" style="color: white;">WAREHOUSING</a><br>
+                        <a href="#" x-on:click="openHome('our_services')" style="color: white;">SEAFREIGHT</a><br>
+                        <a href="#" x-on:click="openHome('our_services')" style="color: white;">AIRFREIGHT</a><br>
+                    </div>
+
+
+                    <div class="col-md-2">
+                        <p class="white-text">GET IN TORCH</p>
+                        <a href="#" x-on:click="openHome('our_services')" style="color: white;">CONTACT</a><br>
+                        <a href="#" x-on:click="openHome('our_services')" style="color: white;">FAQ</a><br>
+
+                    </div>
+
+                    <div class="col-md-2">
+                        <p class="white-text">GPS</p>
+                        <a href="#" x-on:click="openHome('our_services')" style="color: white;">TRACKING</a><br>
+                    </div>
+
+                </div>
+            </div>
+
+        </footer>
+    </section>
+</div>
+
+</html>

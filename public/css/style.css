@@ -134,6 +134,11 @@ textarea.input {
   transition: 0.5s;
 }
 
+.imgs {
+  height: 100%;
+  width: 100%;
+}
+
 .homeImage {
 
     width: 100%;

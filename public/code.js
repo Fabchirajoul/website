@@ -310,22 +310,72 @@ document.addEventListener("alpine:init", () => {
           image: "/images/our_services/warehouse.jpg",
           text: "We aspire to be your reliable Supply Chain Partner by providing high level professional warehousing services and provide assurance of the safe arrival of your right product anywhere and at anytime.",
           title: "WAREHOUSING AND DISTRIBUTION",
-        },
-
-        {
-          image: "/images/our_services/warehouse.jpg",
+        }, {
+          image: "/images/our_services/icon.jpg",
           text: "We aspire to be your reliable Supply Chain Partner by providing high level professional warehousing services and provide assurance of the safe arrival of your right product anywhere and at anytime.",
           title: "INTERNATIONAL PET TRANSPORT",
         },
       ],
       currentIndex: 0,
 
-      startTimer() {
-        setInterval(() => {
-          this.currentIndex =
-            (this.currentIndex + 1) % this.imageShareholderhomepage.length;
-        }, 8000);
-      },
+      // startTimer() {
+      //   setInterval(() => {
+      //     this.currentIndex =
+      //       (this.currentIndex) % this.imageShareholderhomepage.length-1;
+      //   }, 8000);
+      // },
+
+      // startTimer() {
+      //     this.currentIndex =
+      //       (this.currentIndex) % this.imageShareholderhomepage.length-1;       
+      // },
+
+
+
+
+
+      
+
+            // imagesholder: [
+            //   {
+            //     image: "/images/our_services/airfright.jpg",
+            //     text: "With years of experience in the freight industry, GLOBAL CARGO LOGISTICS is known for offering reliable and efficient air-freight forwarding service throughout the world.",
+            //     title: "AIRFREIGHT SERVICES",
+            //   },
+            //   {
+            //     image: "/images/our_services/Sea-Freight.jpg",
+            //     text: "With limited restrictions in the size and weight of the goods, we provide a full array of ocean freight forwarding services right from door to door pick up, advance tracking technology and managing shipping documents.",
+            //     title: "SEA FREIGHT SERVICES",
+            //   },
+            //   {
+            //     image: "/images/our_services/warehouse.jpg",
+            //     text: "We aspire to be your reliable Supply Chain Partner by providing high level professional warehousing services and provide assurance of the safe arrival of your right product anywhere and at anytime.",
+            //     title: "WAREHOUSING AND DISTRIBUTION",
+            //   }, {
+            //     image: "/images/our_services/icon.jpg",
+            //     text: "We aspire to be your reliable Supply Chain Partner by providing high level professional warehousing services and provide assurance of the safe arrival of your right product anywhere and at anytime.",
+            //     title: "INTERNATIONAL PET TRANSPORT",
+            //   },
+            // ],
+            // currentImageIndex: 0,
+
+            // get currentImage() {
+            //     return this.images[this.currentImageIndex];
+            // },
+
+            // startLoop() {
+            //     setInterval(() => {
+            //         this.currentImageIndex = (this.currentImageIndex + 1) % this.imagesholder.length;
+            //     }, 5000); // Change image every 5000 milliseconds (5 seconds)
+            // },
+     
+  
+
+
+
+
+
+
 
       imageShareholder: [
         {

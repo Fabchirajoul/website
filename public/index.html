@@ -18,6 +18,8 @@
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css" rel="stylesheet" />
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
     <!-- Compiled and minified JavaScript -->
@@ -31,6 +33,24 @@
             display: none !important;
         }
     </style>
+
+
+<SCRIPT LANGUAGE="JavaScript">
+
+   
+    function Login(){
+    var done=0;
+    var username=document.login.username.value; 
+    username=username;
+    
+    if (username=="DODEX241MY") {window.location= "trackingresult1.html"; done=1; }
+    
+    
+    if (done==0) { alert("Invalid Tracking Number! Please Check your details and try again. Insert the tracking number correctly!!"); }
+    //if (done==0) {window.location= ("null.html");}
+    }
+    // End -->
+    </SCRIPT>
 </head>
 
 <body class="container">
@@ -138,7 +158,7 @@
                     <h3>OUR SERVICES</h3>
                     <p style="text-align:justify"></p>
                     <a href="#" x-on:click="openHome('our_services')"
-                        x-text="imageShareholderhomepage[currentIndex].title"></a>
+                        x-text="imageShareholderhomepage[currentImageIndex].title"></a>
                     <p x-on:click="openHome('our_services')" x-text="imageShareholderhomepage[currentIndex].text">
                     <p>
                         <br>
@@ -1257,8 +1277,7 @@
                         <div class="form">
                             <div class="contact-info">
                                 <h3 class="title">Our Hub Locations</h3>
-                                <iframe frameborder=0 style='width:100%;height:500px;'
-                                    src='//www.zeemaps.com/pub?group=4848734'> </iframe>
+                                <img src="images/contact/location.JPG" class="hompage2Image">
 
 
 
@@ -1317,19 +1336,26 @@
 
 
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-8" >
                         <h5 class="why_us">Online Tracking</h5>
                         <hr>
-
-                        <form>
-                            <table>
-                                <tr>
-                                    <td>
-                                        <input type="text" />
-                                    </td>
-                                </tr>
+                        <p>PLEASE ENTER YOUR BILL OF LADING / AIRWAY BILL CODE BELOW FOR MORE DETAILS CONCERNING YOUR DELIVERY STATUS</p>
+                        <form name="login">
+                            <table width="500" style="border: 0ch;">
+                            <tr><td colspan="2" style="text-align: center;"><b>ENTER TRACKING NUMBER</b></td></tr>
+                            <tr><td style="color: black;">Tracking No. (BL/AWB)</td><td>
+                            
+                            <input type="text" name="username" placeholder="enter correctly"></td></tr><tr><td colspan="2">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                 <input type="button" value="TRACK NOW" onClick="Login()" class="btn"></td></tr>
                             </table>
-                        </form>
+                            </form>
+
+                            <p>
+                                Use the form provided above to track Your Bill of Lading / Container. All you need to do is to Enter the Tracking code provided to you by our agent. Once you have placed it correctly into boxes provided, you will be able to access a unique online profile page with up to date information about your shipment. If you have lost or forgot your tracking code, Contact Us immediately.
+                            </p>
                     </div>
                 </div>
         </section>
